@@ -1,4 +1,4 @@
-
+#!/usr/bin/env python
 # coding: utf-8
 
 # # Lecture outline
@@ -56,18 +56,20 @@
 
 # In[1]:
 
+
 # Import path to source directory (bit of a hack in Jupyter)
 import sys
 import os
-pwd = get_ipython().magic('pwd')
+pwd = get_ipython().run_line_magic('pwd', '')
 sys.path.append(os.path.join(pwd, os.path.join('..', 'src')))
 
 # Ensure modules are reloaded on any change (very useful when developing code on the fly)
-get_ipython().magic('load_ext autoreload')
-get_ipython().magic('autoreload 2')
+get_ipython().run_line_magic('load_ext', 'autoreload')
+get_ipython().run_line_magic('autoreload', '2')
 
 
 # In[2]:
+
 
 from objfun_airship import AirShip
 airship = AirShip()
@@ -75,20 +77,24 @@ airship = AirShip()
 
 # In[3]:
 
+
 airship.get_bounds()
 
 
 # In[4]:
+
 
 airship.get_fstar()
 
 
 # In[5]:
 
+
 airship.generate_point()
 
 
 # In[6]:
+
 
 airship.evaluate(50)
 
@@ -100,11 +106,13 @@ airship.evaluate(50)
 
 # In[7]:
 
+
 from objfun_sum import Sum
 of_sum = Sum([0, 0, 0, 0], [10, 10, 10, 10])
 
 
 # In[8]:
+
 
 x = of_sum.generate_point()
 print(x)
@@ -113,10 +121,12 @@ print(of_sum.evaluate(x))
 
 # In[9]:
 
+
 print(of_sum.get_neighborhood(x, 1))
 
 
 # In[10]:
+
 
 print(of_sum.get_neighborhood(x, 2))
 
@@ -124,6 +134,7 @@ print(of_sum.get_neighborhood(x, 2))
 # ^^ This behaviour is intended. See code for details.
 
 # In[11]:
+
 
 of_sum.get_neighborhood([0, 0, 0, 0], 1)
 
@@ -140,10 +151,12 @@ of_sum.get_neighborhood([0, 0, 0, 0], 1)
 
 # In[12]:
 
+
 from heur_sg import ShootAndGo
 
 
 # In[13]:
+
 
 # Random Shooting for the AirShip initialization...
 demo_rs = ShootAndGo(airship, maxeval=100, hmax=0)
@@ -165,9 +178,10 @@ demo_rs.search()
 
 # In[14]:
 
+
 import numpy as np
 import pandas as pd
-from tqdm import tqdm_notebook
+from tqdm.notebook import tqdm
 
 
 # ### General experiment setup
@@ -176,9 +190,10 @@ from tqdm import tqdm_notebook
 
 # In[15]:
 
+
 def experiment(of, num_runs, hmax):
     results = []
-    for i in tqdm_notebook(range(num_runs), 'Testing hmax = {}'.format(hmax)):
+    for i in tqdm(range(num_runs), 'Testing hmax = {}'.format(hmax)):
         result = ShootAndGo(of, maxeval=100, hmax=hmax).search() # dict with results of one run
         result['run'] = i
         result['heur'] = 'SG_{}'.format(hmax) # name of the heuristic
@@ -190,6 +205,7 @@ def experiment(of, num_runs, hmax):
 # ### Air Ship experiments
 
 # In[16]:
+
 
 table = pd.DataFrame()
 for hmax in [0, 1, 2, 5, 10, 20, 50, np.inf]:
@@ -203,10 +219,12 @@ for hmax in [0, 1, 2, 5, 10, 20, 50, np.inf]:
 
 # In[17]:
 
+
 table.info()
 
 
 # In[18]:
+
 
 table.head()
 
@@ -217,29 +235,33 @@ table.head()
 
 # In[19]:
 
+
 table.groupby(['hmax'])['best_y'].median()
 
 
 # In[20]:
 
+
 table.groupby(['hmax'])['best_y'].mean()
 
 
-# Feel free to compute other statistics instead of median and mean.
+# Random Shooting seems to find highest quality on average. Feel free to compute other statistics instead of median and mean.
 # 
 # Directly as **Box-Whiskers plot**:
 
 # In[21]:
 
+
 # import visualization libraries
 import matplotlib
-get_ipython().magic('matplotlib notebook')
+get_ipython().run_line_magic('matplotlib', 'notebook')
 import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set()
 
 
-# In[22]:
+# In[24]:
+
 
 ax = sns.boxplot(x="hmax", y="best_y", data=table)
 
@@ -248,38 +270,46 @@ ax = sns.boxplot(x="hmax", y="best_y", data=table)
 # 
 # Let's add another column, `success`:
 
-# In[23]:
+# In[25]:
+
 
 table['success'] = table['neval'] < np.inf
 
 
-# In[24]:
+# In[26]:
+
 
 table[table['success'] == True].head()
 
 
 # Table:
 
-# In[25]:
+# In[27]:
+
 
 table[table['success'] == True].groupby(['hmax'])['neval'].mean()
 
 
-# In[26]:
+# In[28]:
+
 
 table[table['success'] == True].groupby(['hmax'])['neval'].median()
 
 
-# Chart:
+# Shorter runs seem to be the _quickest_.
+# 
+# Graphically:
 
-# In[27]:
+# In[30]:
+
 
 ax = sns.boxplot(x="hmax", y="neval", data=table[table['success'] == True])
 
 
 # #### Reliability
 
-# In[28]:
+# In[31]:
+
 
 rel_by_hmax = table.pivot_table(
     index=['hmax'],
@@ -288,23 +318,28 @@ rel_by_hmax = table.pivot_table(
 )
 
 
-# In[29]:
+# In[32]:
+
 
 rel_by_hmax
 
 
-# In[30]:
+# In[33]:
+
 
 ax = rel_by_hmax.plot(kind='bar')
 
 
+# We can conclude that longer runs (almost unlimited) are the most reliable, on average.
+# 
 # #### Speed, normalized by reliability?
 # 
 # * Reliability: $REL = m/q$ where $m$ is number of successful runs and $q$ is total number of runs, $REL \in [0, 1]$
 # * Mean Number of objective function Evaluations: $MNE = \frac{1}{m} \sum_{i=1}^m neval_i$
 # * Feoktistov criterion: $FEO = MNE/REL$
 
-# In[31]:
+# In[34]:
+
 
 feo_by_hmax = table.pivot_table(
     index=['hmax'],
@@ -314,19 +349,24 @@ feo_by_hmax = table.pivot_table(
 )
 
 
-# In[32]:
+# In[35]:
+
 
 feo_by_hmax
 
 
-# In[33]:
+# In[36]:
+
 
 ax = feo_by_hmax.plot(kind='bar')
 
 
+# After normalization by reliability, it seems that very long run (almost infinitely) is the _fastest_.
+
 # ### `sum(x)` experiments
 
-# In[34]:
+# In[37]:
+
 
 table = pd.DataFrame()
 for hmax in [0, 1, 2, 5, 10, 20, 50, np.inf]:
@@ -336,26 +376,30 @@ for hmax in [0, 1, 2, 5, 10, 20, 50, np.inf]:
 
 # #### Quality of solutions based on hmax?
 
-# In[35]:
+# In[38]:
+
 
 ax = sns.boxplot(x="hmax", y="best_y", data=table)
 
 
 # #### Number of evaluations (when successful), based on hmax?
 
-# In[36]:
+# In[39]:
+
 
 table['success'] = table['neval'] < np.inf
 
 
-# In[37]:
+# In[40]:
+
 
 ax = sns.boxplot(x="hmax", y="neval", data=table[table['success'] == True])
 
 
 # #### Reliability?
 
-# In[38]:
+# In[41]:
+
 
 rel_by_hmax = table.pivot_table(
     index=['hmax'],
@@ -364,19 +408,22 @@ rel_by_hmax = table.pivot_table(
 )
 
 
-# In[39]:
+# In[42]:
+
 
 rel_by_hmax
 
 
-# In[40]:
+# In[43]:
+
 
 ax = rel_by_hmax.plot(kind='bar')
 
 
 # #### Feoktistov criterion?
 
-# In[41]:
+# In[44]:
+
 
 feo_by_hmax = table.pivot_table(
     index=['hmax'],
@@ -385,7 +432,8 @@ feo_by_hmax = table.pivot_table(
 )
 
 
-# In[42]:
+# In[45]:
+
 
 ax = feo_by_hmax.plot(kind='bar')
 
