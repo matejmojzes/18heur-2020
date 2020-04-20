@@ -22,6 +22,41 @@ class Correction:
         return np.minimum(np.maximum(x, self.of.a), self.of.b)
 
 
+class MirrorCorrection(Correction):
+    """
+    Mutation correction via mirroring
+    """
+
+    def __init__(self, of):
+        Correction.__init__(self, of)
+
+    def correct(self, x):
+        n = np.size(x)
+        d = self.of.b - self.of.a
+        for k in range(n):
+            if d[k] == 0:
+                x[k] = self.of.a[k]
+            else:
+                de = np.mod(x[k] - self.of.a[k], 2*d[k])
+                de = np.amin([de, 2*d[k] - de])
+                x[k] = self.of.a[k] + de
+        return x
+
+
+class ExtensionCorrection(Correction):
+    """
+    Mutation correction via periodic domain extension
+    """
+
+    def __init__(self, of):
+        Correction.__init__(self, of)
+
+    def correct(self, x):
+        d = self.of.b - self.of.a
+        x = self.of.a + np.mod(x - self.of.a, d + (1 if is_integer(x) else 0))
+        return x
+
+
 class Mutation:
 
     """
