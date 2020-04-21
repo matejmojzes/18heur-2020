@@ -74,7 +74,7 @@ def demo_select(T):
 
 # #### Low temperature -> first (the best one) solution is selected always:
 
-# In[19]:
+# In[6]:
 
 
 k = demo_select(0.1)
@@ -83,7 +83,7 @@ ax = sns.distplot(k, kde=False)
 
 # #### Medium temperature
 
-# In[20]:
+# In[7]:
 
 
 k = demo_select(1)
@@ -92,7 +92,7 @@ ax = sns.distplot(k, kde=False)
 
 # #### Higher temperature
 
-# In[21]:
+# In[8]:
 
 
 k = demo_select(10)
@@ -198,7 +198,7 @@ results = pd.DataFrame()
 mutation = CauchyMutation(r=0.75, correction=Correction(tsp))
 crossover = UniformMultipoint(1)
 for N in [1, 2, 3, 5, 10, 20, 30, 100]:
-    res = experiment_go(of=tsp, maxeval=maxeval, num_runs=NUM_RUNS, N=N, M=N*3, Tsel1=0.1, Tsel2=1, 
+    res = experiment_go(of=tsp, maxeval=maxeval, num_runs=NUM_RUNS, N=N, M=N*3, Tsel1=1, Tsel2=.1, 
                         mutation=mutation, crossover=crossover)
     results = pd.concat([results, res], axis=0)
 
