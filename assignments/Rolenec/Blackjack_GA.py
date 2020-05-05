@@ -2,19 +2,13 @@
 # coding: utf-8
 
 # # Blackjack strategy - geneticly modified
-# - In this file a first iteration of task for HEUR is presented. 
 # - I have chosen to write a genetic algorithm for strategy optimization in Blackjack. 
-# - In the first iteration the strategy will be only hit(1) or stay(0), no further options (double, split, surrender) are considered. 
+# - In this iteration the strategy will be only hit(1) or stay(0), no further options (double, split, surrender) are considered. 
 #     - The strategy can thus be represented by a boolean vector with the right encoding of card value pairs (dealer,player)->(natural number, position in the strategy vector). 
 #     - The strategy matrix that is considered is a cartesian product of relevant (meaning that the next action of the plyer is not evident, sum 5 -> sure hit) vectors of the player (10,11,...,20) and the dealer (A,2,3,4,5,6,...,10) 
 #     - The 1/11 value of A does not need to be considered in the matrix, it will be accounted for in the fitness function (but it is not now). 
-
-# ## What needs to be done
-# - Enum of card values, 
-# - definition of a strategy, its binary representation and visualisation. 
-# - Simulation of a strategy playing some number of hands. 
-# - Simulate evolution of random strategy generation.
-# - Discussion about its statistics. 
+#     
+# ### Please find a complete summary of the project at the bottom of the notebook 
 
 # In[1]:
 
@@ -26,6 +20,8 @@ import matplotlib as mpl
 from random import shuffle
 import random
 from tqdm.notebook import tqdm
+import seaborn as sns
+from IPython.display import Image
 
 
 # In[2]:
@@ -398,7 +394,7 @@ def remove_the_weak(pop,lucky_factor, fitness, pop_size):
     indices = np.full(x.shape, False, bool)
     randices = np.random.choice(np.arange(indices.shape[0]), n, replace = False,p = pdf)
     indices[randices] = True
-    #print(indices)
+   # print(indices)
     remaining_population = np.array(sorted_pop)[~indices]
     
     return remaining_population.tolist()
@@ -427,8 +423,8 @@ def complete_simulation(pop_size,iterations, stopping_rule_type, rounds):
 
 
 # ### Random shooting
-# - I dont know where to go with the matrix, so I will just shoot. 
-# - To compare somewhat reasonably the GO to SG, one has to have the same amount of Players generated, in case of population of 100 and 100 generations -> 10k players emerge. 
+# - I dont know where to go (Shoot and go) with the matrix, so I will just shoot. 
+# - To compare somewhat reasonably the GA to SG, one has to have the same amount of Players generated, in case of population of 100 and 100 generations -> 10k players emerge. 
 
 # In[27]:
 
@@ -479,6 +475,23 @@ optimal_result = simulate_game(s_optimal, rounds, bet_size)
 optimal_result
 
 
+# ## Strategy comparison
+# - In the following cell we examine the evolution of a GA in the simulation. 
+# 
+# Graphical representation
+# - Black dots represent fitness function result for the best individuals in the generation with its number on x axis. 
+# - y axis represents value of a fitness function, money that was earned through the gameplay.
+# - Yellow dots represent mean value of a fitness function in a generation. 
+# - Red line is the best result from a set of random generated population, with no evolution and a population size equal to the number of individuals in GA times the number of generations in GA. This number is chosen to more logically compare the results. 
+# - Blue and black lines are results of the expert and optimal strategies presented in the beginning of this notebook. 
+# 
+# Genetics
+# - We can see that genetic results are really bad in the beginning, but they have good trend. The algorithm is able to "learn" the shoe (in the current implementation consisting of approaximately 10k cards) and become profitable around a generation 37. 
+# - The evolution has its limits and we can see that there is only small change from the best result of 70th generation and the 150th.
+# 
+# What next
+# - A deeper study of parameter changes and optimal strategy could certainly be done in the future. The same way as a study of sudden jumps in performance, in other words, what happened in the iteration xy and why it is important for better fitness? 
+
 # In[33]:
 
 
@@ -510,40 +523,82 @@ for i in range(iterations-1):
     stats_GA.top_strategies[i+1].visualize_matrix("Iteration "+str(i)+ ", Fitness "+ str(stats_GA.max_values[i]))
 
 
-# # Final ideas for improvement in 1st iteration - 
-# 
-# - Add double, surrender, split actions to the strategy vector (not a clear binary encoding) 
-# - Implement soft aces in the point evaluation. 
-# - Implement value and power of blackjack (Now 21 from blackjack and from 10,3,8 is considered the same)
-# - Improve mutation and crossover
-# - Create one shoe of cards for every fitness evaluation (make the players improve on one specific setting).
-#     - The Strategies are probably going to converge to some final strategy. 
-#     - It is not a good simulation of reality. 
-# - Create best representant as a majority voting from top 10 for example
-# - New metrics in stats (some distance from the optimal strategy). 
-# - Time complexity optimisation of the code. 
-# - Print out the evolution of decils 
-# - Create a simple GUI which would take parameters, have a button, which would start the simulation and then visualize the results in a way that [This dude](https://www.youtube.com/watch?v=GOFws_hhZs8) does
-
-# ## Notes from iteration one
-# - Strategies do not converge to one specific strategy. Probably due to the stochastic nature of the fitness function. Even for thousands of hands handed in evaluating fitness function and even for a thousand generations. 
-# - After certain number of iterations, no significant improvement is made. This number is around a 100
+# ### HeatMap
+# - In the end the heatmap does not say much, because the strategies tend to not change in the later phases of the evolution. 
+# - Light spaces say hit, dark say stay. 
+# - We can see that even though it should not be optimal to stay at 10 if dealer has a 5, most of the strategies actually do this.
+# - This migh mean that the seeded package is exceptional in some sense, that in games where player has 10 and potentialy takes a card that would be bad for the dealer.  
+# - Or it might not be that way and the mutation just never hits this part of the genom.
+# - As the evolution is influenced by a random mutations the heatmap is different each time. 
 # 
 
-# ## Notes from iteration 2 
-# - Seeding the shoes was implemented, now the best result of a strategy tends to be monotone function of iteration number. 
-# - Comparison to random shooting, Optimal strategy and Expert strategy (from Jan Tlachač) implemented. 
-# - Code was translated to python, to improve skills with PyCharm and also for easier commenting on pull requests. 
-# - values of players cards 8,9,21 could be added to mess with the simulation a little bit. strategies that stay on those values should be really bad. 
+# In[35]:
+
+
+sum_of_mats = np.zeros((11,10))
+for strat in stats_GA.top_strategies:
+    matrix = strat.get_matrix()
+    sum_of_mats = sum_of_mats +matrix
+    
+x = ['2', '3', '4', '5','6', '7', '8', '9','10','A']
+y = ['10', '11', '12', '13', '14', '15','16', '17', '18', '19', '20']
+
+heat_map = sns.heatmap(sum_of_mats, xticklabels = x, yticklabels = y)
+
+plt.xlabel("Dealer's card")
+plt.ylabel("Player's cards sum")
+
+
+# # Overview of the work
 # 
-# - When the number of rounds is large, the optimal strategy is better than random shooting. When the number of rounds is small, then the opposite is true. 
-# - It would be interesting to take the optimal strategy generated by GA with fixed seed and play with it on random deck. Then compare it to the Optimal strategy. 
-# - It would be better to plot only those iterations where something changed. 
-# - I am a little bit afraid, that the population is homogeneous after certain number of iterations. 
+# ## Idea 
 # 
+# - The core of this project for 18HEUR subject on FNSPE CTU Prague is to implement genetical algorithm (GA) playing simplified version of a popular card game blackjack. 
+# - There are no soft aces, no double or split possible. Blackjack pays only double not 5/2 the bet. Dealer hits under 17 always. 
+# - The game fits the formate of GA nicely. Each strategy can be interpreted as a 110 bits long binary vector, which makes the crossovers and mutation easy to implement. The game is simple enough and its social impact high enough, that it makes sense to study it and try to develop interesting GA and learn something new on it. 
+# 
+# ## Execution 
+# #### Setup 
+# - First card class and shoe is implemented. Take some number of packages and shuffle them together. 
+# - Then define a strategy as a 110 bits long vector or a binary matrix 11x10. A visualization of such strategy serves only for better examinaiton of what is going on.
+# - Define expert strategy (from a friend) and optimal strategy (from the [internet](https://wizardofodds.com/games/blackjack/strategy/4-decks/)). 
+# - Implement a game simulation, player takes cards according to his bits in his strategy, dealer based on casino rules. 
+# 
+# #### Genetics 
+# - Now its time for some genetics. First make sure to be able to generate random population. 
+# - Then crossover, cut tvo individual vectors at some random threshold and glue them together, voila new strategy. 
+# - Mutation is also simple, just with some small chance change each bit separatelly. 
+# - Finally, delete the weak individuals. But not simply like only take the first 100, but give a chance to the poor performers to be lucky. A deadly pdf tells the destiny of each individual in a population. 
+# 
+# #### Simulation 
+# - Generate random population, breed new individuals, create mutants, remove the weak and repeat, for example 150 times. And now you have a champion (hopefully). 
+# 
+# ## Results 
+# - From the graphs above, it can be seen that GA performance is week from the start, which makes sense. 
+# - It also improves is fitness function rapidly from the beginning, which is again a good sign for GAs. 
+# - Then a classic slowdown occurs, there is not much more space to evolve and we are reaching local (or global) maxima of the fitness function. 
+# - Everything works well according to GA framework. We could play with parameters and study speed of convergence, but that is out of the scope of this work. 
+# 
+# ## Conclusion
+# - Random fitness function is a problem. The unrealistic assumption of seeded shoe bothers me. 
+# - I do not really know how to handle random fitness funcitons in GA. 
+# - Otherwise GA proved itsef to be a cool optimization method. It is not that complicated to implement and its results can be very good in comparison to random shooting or not knowing what better thing to do with such problem. 
+# - Blackjack could be, and probably was solved theoretically, but this seems as more fun than compute probability distributions of the next cards by classical game theory. Classical game theory would probably give better results. 
+# 
+# ## What could be done but was not
+# - Real blackjack has splits, doubling, surrender, blackjack paying 5/2, insurances, soft aces. 
+# - Card counting could be implemented, however the more shuffled decks the shoe has, the lower the advantage I guess. 
+# - Crossover could be more complicated, not only one cut. 
+# - Best representant of a population could be chosen as the majority vote from top 20% of strategies for example. 
+# - Crossover that is a majority voting from multiple good strategies, that could be fun. 
+# - New metrics, distance from the optimal strategy. 
+# - Visualisation of decils. 
+# - Values 8,9,21 could be added to the matrix to mess with the algorithm. 
+# - Compare the results of strategy trained on fixed deck to the optimum on random decks. 
+# - Plot iterations where something changed only. 
 
-# In[ ]:
+# In[36]:
 
 
-
+Image(filename='GA_vtip.png') 
 
