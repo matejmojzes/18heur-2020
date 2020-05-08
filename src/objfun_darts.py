@@ -52,7 +52,7 @@ class Dartboard(ObjFun):
 
         self.sector_angle = 2 * math.pi / len(self.sectors)
 
-        super().__init__(self.count_max_score(), -1*self.ring_params[-1][0], self.ring_params[-1][0])
+        super().__init__(-1*self.count_max_score(), [-1*self.ring_params[-1][0], -1*self.ring_params[-1][0]], [1*self.ring_params[-1][0], 1*self.ring_params[-1][0]])
 
     def evaluate(self, x):
 
@@ -72,7 +72,7 @@ class Dartboard(ObjFun):
             score[index] = self.ring_params[i][1] * score[index] + self.ring_params[i][2]
         index = distance < self.ring_params[0][0]
         score[index] = self.ring_params[0][1] * score[index] + self.ring_params[0][2]
-
+        score = -1*score
         return score
 
     def count_max_score(self):
@@ -82,11 +82,19 @@ class Dartboard(ObjFun):
     def generate_point(self):
         return pol_to_car(np.random.uniform(0, 2*math.pi, 1), np.random.uniform(0, self.a, 1))
 
-    def get_neighborhood(self, x, d):
-        pass
-
-    def plot(self):
-        pass
+    def get_neighborhood(self, x, d=1):
+        epsilon = 0.01
+        nd = []
+        for i in range(len(x)):
+            if x[i][0] > self.a[i]:
+                xx = x.copy()
+                xx[i][0] -= 0.01
+                nd.append(xx)
+            if x[i][0] < self.b[i]:
+                xx = x.copy()
+                xx[i][0] += 0.01
+                nd.append(xx)
+        return nd
 
 
 class DartsAvgScore(ObjFun):
@@ -166,7 +174,7 @@ class DartsPlotter(object):
 
         score = dartboard.evaluate([np.ravel(x[0]), np.ravel(x[1])])
 
-        score = score.reshape(x[0].shape)
+        score = -1*score.reshape(x[0].shape)
 
         self.plot_flat_dartboard(dartboard)
 
@@ -176,12 +184,12 @@ class DartsPlotter(object):
 
     def scatter_points(self, dartboard, x):
         self.plot_flat_dartboard(dartboard)
-        self.ax.scatter(x[0], x[1], dartboard.evaluate(x), cmap='coolwarm')
+        self.ax.scatter(x[0], x[1], -1*dartboard.evaluate(x), cmap='coolwarm')
         self.set_axis()
 
     def plot_points(self, dartboard, x):
         self.plot_flat_dartboard(dartboard)
-        z = dartboard.evaluate(x)
+        z = -1*dartboard.evaluate(x)
 
         for i in range(1, len(x[0])):
             self.ax.plot([x[0][i-1], x[0][i]], [x[1][i-1], x[1][i]], [z[i-1], z[i]], c=[180 / 255, 180 / 255, 180 / 255], linewidth=1)
