@@ -12,6 +12,10 @@ class DifferentialEvolution(Heuristic):
         self.CR = CR
         assert 0 <= F <= 2, 'F should be from [0; 2]'
         self.F = F
+        self.name = 'DE'
+
+    def get_specs(self):
+        return self.get_name() + '_N={}_CR={}_F={}'.format(self.N, self.CR, self.F)
 
     def search(self):
         try:

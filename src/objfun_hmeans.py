@@ -37,6 +37,7 @@ class HMeans(ObjFun):
         self.C = C
         x_centroids = self.encode_solution(C)
         self.fstar = self.evaluate(x_centroids) + eps
+        self.name = 'hmeans'
 
     def encode_solution(self, C):
         """

@@ -4,7 +4,7 @@ class ObjFun(object):
     Generic objective function super-class
     """
 
-    def __init__(self, fstar, a, b):
+    def __init__(self, fstar, a, b, name='abstract'):
         """
         Default initialization function that sets:
         :param fstar: f^* value to be reached (can be -inf)
@@ -14,6 +14,10 @@ class ObjFun(object):
         self.fstar = fstar
         self.a = a
         self.b = b
+        self.name = name
+
+    def get_name(self):
+        return self.name
 
     def get_fstar(self):
         """

@@ -13,6 +13,7 @@ class DeJong1(ObjFun):
         self.n = n
         self.a = -5.12*np.ones(self.n, dtype=np.float64)
         self.b = 5.12*np.ones(self.n, dtype=np.float64)
+        self.name = 'dejong'
 
     def generate_point(self):
         return np.array([np.random.uniform(self.a[i], self.b[i]) for i in np.arange(self.n)], dtype=np.float64)

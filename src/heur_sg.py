@@ -20,6 +20,16 @@ class ShootAndGo(Heuristic):
         self.hmax = hmax
         self.random_descent = random_descent
 
+        if self.random_descent:
+            self.name = 'SG_RD'
+        else:
+            self.name = 'SG_SD'
+        if self.hmax is 0:
+            self.name = 'SG_RS'
+
+    def get_specs(self):
+        return self.get_name() + '_hmax={}'.format(self.hmax)
+
     def steepest_descent(self, x):
         """
         Steepest/Random Hill Descent

@@ -1,0 +1,564 @@
+,heur,run,best_x,best_y,neval
+0,SG_SD_hmax10,1,"[array([24.45542943]), array([-106.90510054])]",[-51],inf
+1,SG_SD_hmax10,2,"[array([-10.41384061]), array([109.88913129])]",[-60],4385.0
+2,SG_SD_hmax10,3,"[array([-10.41384061]), array([109.88913129])]",[-60],11334.0
+3,SG_SD_hmax10,4,"[array([-10.41384061]), array([109.88913129])]",[-60],12847.0
+4,SG_SD_hmax10,5,"[array([-10.41384061]), array([109.88913129])]",[-60],17051.0
+5,SG_SD_hmax10,6,"[array([-10.41384061]), array([109.88913129])]",[-60],18474.0
+6,SG_SD_hmax10,7,"[array([-10.41384061]), array([109.88913129])]",[-60],18916.0
+7,SG_SD_hmax10,8,"[array([-10.41384061]), array([109.88913129])]",[-60],26090.0
+8,SG_SD_hmax10,9,"[array([-10.41384061]), array([109.88913129])]",[-60],27810.0
+9,SG_SD_hmax10,10,"[array([-10.41384061]), array([109.88913129])]",[-60],31708.0
+0,SG_SD_hmax=inf,11,"[array([-0.8642373]), array([-1.33355445])]",[-50],inf
+1,SG_SD_hmax=inf,12,"[array([7.20923931]), array([114.65361555])]",[-60],5123.0
+2,SG_SD_hmax=inf,13,"[array([7.20923931]), array([114.65361555])]",[-60],10542.0
+3,SG_SD_hmax=inf,14,"[array([7.20923931]), array([114.65361555])]",[-60],15304.0
+4,SG_SD_hmax=inf,15,"[array([7.20923931]), array([114.65361555])]",[-60],16934.0
+5,SG_SD_hmax=inf,16,"[array([7.20923931]), array([114.65361555])]",[-60],28113.0
+6,SG_SD_hmax=inf,17,"[array([7.20923931]), array([114.65361555])]",[-60],30157.0
+7,SG_SD_hmax=inf,18,"[array([7.20923931]), array([114.65361555])]",[-60],32885.0
+8,SG_SD_hmax=inf,19,"[array([7.20923931]), array([114.65361555])]",[-60],34911.0
+9,SG_SD_hmax=inf,20,"[array([7.20923931]), array([114.65361555])]",[-60],40987.0
+,heur,run,best_x,best_y,neval
+0,SG_SD_hmax=10,1,"[array([55.92475157]), array([94.0379147])]",[-54],inf
+1,SG_SD_hmax=10,2,"[array([55.92475157]), array([94.0379147])]",[-54],inf
+2,SG_SD_hmax=10,3,"[array([55.92475157]), array([94.0379147])]",[-54],inf
+3,SG_SD_hmax=10,4,"[array([55.92475157]), array([94.0379147])]",[-54],inf
+4,SG_SD_hmax=10,5,"[array([55.92475157]), array([94.0379147])]",[-54],inf
+5,SG_SD_hmax=10,6,"[array([55.92475157]), array([94.0379147])]",[-54],inf
+6,SG_SD_hmax=10,7,"[array([55.92475157]), array([94.0379147])]",[-54],inf
+7,SG_SD_hmax=10,8,"[array([55.92475157]), array([94.0379147])]",[-54],inf
+8,SG_SD_hmax=10,9,"[array([55.92475157]), array([94.0379147])]",[-54],inf
+9,SG_SD_hmax=10,10,"[array([55.92475157]), array([94.0379147])]",[-54],inf
+0,SG_SD_hmax=inf,11,"[array([12.69905633]), array([108.55374851])]",[-60],910
+1,SG_SD_hmax=inf,12,"[array([12.69905633]), array([108.55374851])]",[-60],1000
+2,SG_SD_hmax=inf,13,"[array([12.69905633]), array([108.55374851])]",[-60],1001
+3,SG_SD_hmax=inf,14,"[array([12.69905633]), array([108.55374851])]",[-60],1002
+4,SG_SD_hmax=inf,15,"[array([12.69905633]), array([108.55374851])]",[-60],1003
+5,SG_SD_hmax=inf,16,"[array([12.69905633]), array([108.55374851])]",[-60],1004
+6,SG_SD_hmax=inf,17,"[array([12.69905633]), array([108.55374851])]",[-60],1005
+7,SG_SD_hmax=inf,18,"[array([12.69905633]), array([108.55374851])]",[-60],1006
+8,SG_SD_hmax=inf,19,"[array([12.69905633]), array([108.55374851])]",[-60],1007
+9,SG_SD_hmax=inf,20,"[array([12.69905633]), array([108.55374851])]",[-60],1008
+,heur,run,best_x,best_y,neval
+0,SG_SD_hmax=10,1,"[array([-0.41421704]), array([-0.17716063])]",[-50],inf
+1,SG_SD_hmax=10,2,"[array([-0.41421704]), array([-0.17716063])]",[-50],inf
+2,SG_SD_hmax=10,3,"[array([-0.41421704]), array([-0.17716063])]",[-50],inf
+3,SG_SD_hmax=10,4,"[array([-0.41421704]), array([-0.17716063])]",[-50],inf
+4,SG_SD_hmax=10,5,"[array([-0.41421704]), array([-0.17716063])]",[-50],inf
+5,SG_SD_hmax=10,6,"[array([-0.41421704]), array([-0.17716063])]",[-50],inf
+6,SG_SD_hmax=10,7,"[array([-0.41421704]), array([-0.17716063])]",[-50],inf
+7,SG_SD_hmax=10,8,"[array([-0.41421704]), array([-0.17716063])]",[-50],inf
+8,SG_SD_hmax=10,9,"[array([-0.41421704]), array([-0.17716063])]",[-50],inf
+9,SG_SD_hmax=10,10,"[array([-0.41421704]), array([-0.17716063])]",[-50],inf
+,heur,run,best_x,best_y,neval
+0,SG_SD_hmax=10,1,"[array([2.86265041]), array([4.72822928])]",[-50],inf
+1,SG_SD_hmax=10,2,"[array([2.86265041]), array([4.72822928])]",[-50],inf
+2,SG_SD_hmax=10,3,"[array([2.86265041]), array([4.72822928])]",[-50],inf
+3,SG_SD_hmax=10,4,"[array([2.86265041]), array([4.72822928])]",[-50],inf
+4,SG_SD_hmax=10,5,"[array([2.86265041]), array([4.72822928])]",[-50],inf
+5,SG_SD_hmax=10,6,"[array([2.86265041]), array([4.72822928])]",[-50],inf
+6,SG_SD_hmax=10,7,"[array([2.86265041]), array([4.72822928])]",[-50],inf
+7,SG_SD_hmax=10,8,"[array([2.86265041]), array([4.72822928])]",[-50],inf
+8,SG_SD_hmax=10,9,"[array([2.86265041]), array([4.72822928])]",[-50],inf
+9,SG_SD_hmax=10,10,"[array([2.86265041]), array([4.72822928])]",[-50],inf
+0,SG_SD_hmax=inf,11,"[array([0.75841801]), array([-5.91485433])]",[-50],inf
+1,SG_SD_hmax=inf,12,"[array([0.75841801]), array([-5.91485433])]",[-50],inf
+2,SG_SD_hmax=inf,13,"[array([0.75841801]), array([-5.91485433])]",[-50],inf
+3,SG_SD_hmax=inf,14,"[array([0.75841801]), array([-5.91485433])]",[-50],inf
+4,SG_SD_hmax=inf,15,"[array([0.75841801]), array([-5.91485433])]",[-50],inf
+5,SG_SD_hmax=inf,16,"[array([0.75841801]), array([-5.91485433])]",[-50],inf
+6,SG_SD_hmax=inf,17,"[array([-45.73270462]), array([-102.41457876])]",[-57],inf
+7,SG_SD_hmax=inf,18,"[array([-45.73270462]), array([-102.41457876])]",[-57],inf
+8,SG_SD_hmax=inf,19,"[array([-45.73270462]), array([-102.41457876])]",[-57],inf
+9,SG_SD_hmax=inf,20,"[array([-45.73270462]), array([-102.41457876])]",[-57],inf
+0,SG_RS_hmax=0,21,"[array([-7.84781738]), array([109.52890183])]",[-60],12
+1,SG_RS_hmax=0,22,"[array([-7.84781738]), array([109.52890183])]",[-60],58
+2,SG_RS_hmax=0,23,"[array([-7.84781738]), array([109.52890183])]",[-60],700
+3,SG_RS_hmax=0,24,"[array([-7.84781738]), array([109.52890183])]",[-60],910
+4,SG_RS_hmax=0,25,"[array([-7.84781738]), array([109.52890183])]",[-60],1000
+5,SG_RS_hmax=0,26,"[array([-7.84781738]), array([109.52890183])]",[-60],1001
+6,SG_RS_hmax=0,27,"[array([-7.84781738]), array([109.52890183])]",[-60],1002
+7,SG_RS_hmax=0,28,"[array([-7.84781738]), array([109.52890183])]",[-60],1003
+8,SG_RS_hmax=0,29,"[array([-7.84781738]), array([109.52890183])]",[-60],1004
+9,SG_RS_hmax=0,30,"[array([-7.84781738]), array([109.52890183])]",[-60],1005
+,heur,run,best_x,best_y,neval
+0,SG_SD_maxeval=1000_hmax=10,1,"[array([-32.96081364]), array([-109.41290261])]",[-57],inf
+1,SG_SD_maxeval=1000_hmax=10,2,"[array([-0.31504693]), array([-0.04134657])]",[-50],inf
+2,SG_SD_maxeval=1000_hmax=10,3,"[array([-21.09815596]), array([-109.90352591])]",[-57],inf
+3,SG_SD_maxeval=1000_hmax=10,4,"[array([-4.09393779]), array([-1.1802072])]",[-50],inf
+4,SG_SD_maxeval=1000_hmax=10,5,"[array([8.65751063]), array([110.73292336])]",[-60],928.0
+5,SG_SD_maxeval=1000_hmax=10,6,"[array([16.48629409]), array([108.83611274])]",[-60],316.0
+6,SG_SD_maxeval=1000_hmax=10,7,"[array([54.49473255]), array([94.33961478])]",[-54],inf
+7,SG_SD_maxeval=1000_hmax=10,8,"[array([54.98571889]), array([100.4342896])]",[-54],inf
+8,SG_SD_maxeval=1000_hmax=10,9,"[array([59.23005728]), array([94.33802032])]",[-54],inf
+9,SG_SD_maxeval=1000_hmax=10,10,"[array([-0.16349793]), array([1.40897191])]",[-50],inf
+0,SG_RS_maxeval=1000_hmax=0,11,"[array([16.3856641]), array([109.74545183])]",[-60],332.0
+1,SG_RS_maxeval=1000_hmax=0,12,"[array([-7.6300459]), array([113.7454478])]",[-60],487.0
+2,SG_RS_maxeval=1000_hmax=0,13,"[array([16.96697447]), array([109.19895952])]",[-60],168.0
+3,SG_RS_maxeval=1000_hmax=0,14,"[array([-39.90048677]), array([-99.45998175])]",[-57],inf
+4,SG_RS_maxeval=1000_hmax=0,15,"[array([-8.51759801]), array([112.31676394])]",[-60],447.0
+5,SG_RS_maxeval=1000_hmax=0,16,"[array([13.8234138]), array([112.6854003])]",[-60],358.0
+6,SG_RS_maxeval=1000_hmax=0,17,"[array([14.03914015]), array([107.97077747])]",[-60],489.0
+7,SG_RS_maxeval=1000_hmax=0,18,"[array([-13.31671155]), array([107.90442656])]",[-60],233.0
+8,SG_RS_maxeval=1000_hmax=0,19,"[array([-8.72472896]), array([112.01740835])]",[-60],59.0
+9,SG_RS_maxeval=1000_hmax=0,20,"[array([3.38212937]), array([109.00833123])]",[-60],53.0
+0,SG_RS_maxeval=1000_hmax=0,21,"[array([11.13633656]), array([112.08450149])]",[-60],16
+1,SG_RS_maxeval=1000_hmax=0,22,"[array([-13.45907354]), array([108.59450961])]",[-60],409
+2,SG_RS_maxeval=1000_hmax=0,23,"[array([-6.33879727]), array([109.25618423])]",[-60],468
+3,SG_RS_maxeval=1000_hmax=0,24,"[array([7.53856096]), array([110.85251852])]",[-60],465
+4,SG_RS_maxeval=1000_hmax=0,25,"[array([-1.26752047]), array([110.537259])]",[-60],205
+5,SG_RS_maxeval=1000_hmax=0,26,"[array([17.18039073]), array([111.92755586])]",[-60],549
+6,SG_RS_maxeval=1000_hmax=0,27,"[array([0.87228874]), array([108.6147261])]",[-60],407
+7,SG_RS_maxeval=1000_hmax=0,28,"[array([-9.46400693]), array([110.00211308])]",[-60],51
+8,SG_RS_maxeval=1000_hmax=0,29,"[array([7.38850414]), array([106.83318883])]",[-60],335
+9,SG_RS_maxeval=1000_hmax=0,30,"[array([-0.12136965]), array([108.56808546])]",[-60],339
+0,SG_RS_maxeval=1000_hmax=0,31,"[array([4.12477696]), array([108.79355535])]",[-60],136
+1,SG_RS_maxeval=1000_hmax=0,32,"[array([-4.94815409]), array([109.68633568])]",[-60],77
+2,SG_RS_maxeval=1000_hmax=0,33,"[array([-12.62274468]), array([112.44779614])]",[-60],479
+3,SG_RS_maxeval=1000_hmax=0,34,"[array([-10.96468315]), array([112.6597982])]",[-60],184
+4,SG_RS_maxeval=1000_hmax=0,35,"[array([9.23878796]), array([112.29696087])]",[-60],145
+5,SG_RS_maxeval=1000_hmax=0,36,"[array([-4.23787215]), array([109.17577298])]",[-60],11
+6,SG_RS_maxeval=1000_hmax=0,37,"[array([15.52282719]), array([109.65812715])]",[-60],78
+7,SG_RS_maxeval=1000_hmax=0,38,"[array([5.06989457]), array([114.34220108])]",[-60],936
+8,SG_RS_maxeval=1000_hmax=0,39,"[array([15.94166193]), array([109.81629471])]",[-60],41
+9,SG_RS_maxeval=1000_hmax=0,40,"[array([-4.4407156]), array([114.30150179])]",[-60],44
+0,SG_RS_maxeval=1000_hmax=0,41,"[1.5115635115059705, 111.14864646715293]",[-60],320.0
+1,SG_RS_maxeval=1000_hmax=0,42,"[-9.461571980527804, 107.37412196556932]",[-60],541.0
+2,SG_RS_maxeval=1000_hmax=0,43,"[17.14275237907867, 113.1355493719917]",[-60],369.0
+3,SG_RS_maxeval=1000_hmax=0,44,"[-24.80360877851111, -107.17738605613675]",[-57],inf
+4,SG_RS_maxeval=1000_hmax=0,45,"[16.964065602306626, 112.96746886490692]",[-60],485.0
+5,SG_RS_maxeval=1000_hmax=0,46,"[7.271335018761132, 111.29571582824671]",[-60],142.0
+6,SG_RS_maxeval=1000_hmax=0,47,"[5.5714769146488425, 110.26987772523977]",[-60],47.0
+7,SG_RS_maxeval=1000_hmax=0,48,"[-0.02424251456823894, 108.66298119316654]",[-60],627.0
+8,SG_RS_maxeval=1000_hmax=0,49,"[4.074909830097627, 112.09306314189789]",[-60],260.0
+9,SG_RS_maxeval=1000_hmax=0,50,"[8.979655851231263, 109.4980389375351]",[-60],26.0
+0,SG_RS_maxeval=1000_hmax=0,51,"[-7.71, 107.42]",[-60],90.0
+1,SG_RS_maxeval=1000_hmax=0,52,"[-3.21, 114.3]",[-60],468.0
+2,SG_RS_maxeval=1000_hmax=0,53,"[-12.55, 106.47]",[-60],440.0
+3,SG_RS_maxeval=1000_hmax=0,54,"[6.79, 106.97]",[-60],509.0
+4,SG_RS_maxeval=1000_hmax=0,55,"[-4.62, 108.34]",[-60],407.0
+5,SG_RS_maxeval=1000_hmax=0,56,"[-10.38, 108.11]",[-60],373.0
+6,SG_RS_maxeval=1000_hmax=0,57,"[-37.42, -104.17]",[-57],inf
+7,SG_RS_maxeval=1000_hmax=0,58,"[-0.27, 108.39]",[-60],241.0
+8,SG_RS_maxeval=1000_hmax=0,59,"[7.8, 113.0]",[-60],127.0
+9,SG_RS_maxeval=1000_hmax=0,60,"[-2.62, 108.87]",[-60],257.0
+0,SG_RS_maxeval=1000_hmax=0,61,"[8.4, 109.9]",[-60],21.0
+1,SG_RS_maxeval=1000_hmax=0,62,"[-4.4, 109.0]",[-60],13.0
+2,SG_RS_maxeval=1000_hmax=0,63,"[-15.7, 109.2]",[-60],420.0
+3,SG_RS_maxeval=1000_hmax=0,64,"[-38.2, -104.4]",[-57],inf
+4,SG_RS_maxeval=1000_hmax=0,65,"[3.0, 110.7]",[-60],153.0
+5,SG_RS_maxeval=1000_hmax=0,66,"[-3.8, 109.9]",[-60],155.0
+6,SG_RS_maxeval=1000_hmax=0,67,"[-2.3, 110.1]",[-60],285.0
+7,SG_RS_maxeval=1000_hmax=0,68,"[6.7, 108.6]",[-60],24.0
+8,SG_RS_maxeval=1000_hmax=0,69,"[10.5, 109.2]",[-60],201.0
+9,SG_RS_maxeval=1000_hmax=0,70,"[-9.9, 110.8]",[-60],403.0
+,heur,run,best_x,best_y,neval
+0,SG_SD_maxeval=1000_hmax=10,1,"[1.0, 107.1]",[-60],694.0
+1,SG_SD_maxeval=1000_hmax=10,2,"[-4.9, -2.7]",[-50],inf
+2,SG_SD_maxeval=1000_hmax=10,3,"[-2.8, 5.4]",[-50],inf
+3,SG_SD_maxeval=1000_hmax=10,4,"[0.3, 2.1]",[-50],inf
+4,SG_SD_maxeval=1000_hmax=10,5,"[-50.3, -99.1]",[-57],inf
+5,SG_SD_maxeval=1000_hmax=10,6,"[-51.1, -102.2]",[-57],inf
+6,SG_SD_maxeval=1000_hmax=10,7,"[72.4, 82.2]",[-54],inf
+7,SG_SD_maxeval=1000_hmax=10,8,"[-7.5, 111.9]",[-60],302.0
+8,SG_SD_maxeval=1000_hmax=10,9,"[-46.5, -100.2]",[-57],inf
+9,SG_SD_maxeval=1000_hmax=10,10,"[7.5, 114.5]",[-60],611.0
+0,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,11,[0.74935221 4.8152627 ],[-50],inf
+1,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,12,[-80.31874645 -78.78758667],[-48],inf
+2,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,13,[-101.12750725   38.54613968],[-42],inf
+3,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,14,[100.37179615  44.2176928 ],[-39],inf
+4,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,15,[  28.21632421 -105.10320811],[-51],inf
+5,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,16,[-62.03358751  90.6348096 ],[-36],inf
+6,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,17,[-109.34666539   30.50569429],[-42],inf
+7,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,18,[106.29924546  17.94662874],[-39],inf
+8,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,19,[3.43211537 4.93100264],[-50],inf
+9,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,20,[ 1.4 -1. ],[-50],inf
+0,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,21,[ -17.4599408  -110.01126496],[-57],inf
+1,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,22,[-3.68419397 -3.90451592],[-50],inf
+2,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,23,[ 3.30594944 -3.34980991],[-50],inf
+3,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,24,[-11.32763088 107.51394527],[-60],61.0
+4,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,25,[161.2  35.1],[-26],inf
+5,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,26,[1.2 1.1],[-50],inf
+6,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,27,[ 0.6 -4.5],[-50],inf
+7,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,28,[106.51981115  20.74539982],[-39],inf
+8,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,29,[ -33.05393093 -109.39283341],[-57],inf
+9,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,30,[-3.21670433  1.17672178],[-50],inf
+0,FSA_maxeval=1000_T0=1_n0=1_alpha=2,31,[ 4.4 -2.1],[-50],inf
+1,FSA_maxeval=1000_T0=1_n0=1_alpha=2,32,[4.80992677 1.95900922],[-50],inf
+2,FSA_maxeval=1000_T0=1_n0=1_alpha=2,33,[-51.4294718   99.77873154],[-36],inf
+3,FSA_maxeval=1000_T0=1_n0=1_alpha=2,34,[ 99.7816764  -56.91224416],[-45],inf
+4,FSA_maxeval=1000_T0=1_n0=1_alpha=2,35,[ 85.37996216 -75.7147712 ],[-45],inf
+5,FSA_maxeval=1000_T0=1_n0=1_alpha=2,36,[ -8.81911471 114.1299623 ],[-60],43.0
+6,FSA_maxeval=1000_T0=1_n0=1_alpha=2,37,[-121.40757853 -114.58568513],[-32],inf
+7,FSA_maxeval=1000_T0=1_n0=1_alpha=2,38,[  1.65722439 114.6841682 ],[-60],62.0
+8,FSA_maxeval=1000_T0=1_n0=1_alpha=2,39,[ -21.19646349 -105.45345949],[-57],inf
+9,FSA_maxeval=1000_T0=1_n0=1_alpha=2,40,[69.73769477 90.72785509],[-54],inf
+0,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,41,[  43.52510927 -159.3368031 ],[-34],inf
+1,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,42,[-5.91278966  1.83145521],[-50],inf
+2,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,43,[  0.29157937 168.57762405],[-40],inf
+3,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,44,[-90.57067737 -65.73240466],[-48],inf
+4,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,45,[ -38.05711331 -100.70372727],[-57],inf
+5,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,46,[109.19838694  22.75599796],[-39],inf
+6,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,47,[ -20.29331689 -105.55341986],[-57],inf
+7,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,48,[-90.0804729  -62.30025164],[-48],inf
+8,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,49,[  52.56974606 -159.42858666],[-34],inf
+9,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,50,[ -32.88657454 -109.27509095],[-57],inf
+,heur,run,best_x,best_y,neval
+0,SG_SD_maxeval=1000_hmax=10,1,[4.6 3.3],[-50],inf
+1,SG_SD_maxeval=1000_hmax=10,2,[ -32.5 -110.1],[-57],inf
+2,SG_SD_maxeval=1000_hmax=10,3,[ -26.7 -105.1],[-57],inf
+3,SG_SD_maxeval=1000_hmax=10,4,[ -6.9 111.8],[-60],37.0
+4,SG_SD_maxeval=1000_hmax=10,5,[ -2.  114.1],[-60],284.0
+5,SG_SD_maxeval=1000_hmax=10,6,[-0.   0.1],[-50],inf
+6,SG_SD_maxeval=1000_hmax=10,7,[-2.3 -4.2],[-50],inf
+7,SG_SD_maxeval=1000_hmax=10,8,[ -40.9 -103.8],[-57],inf
+8,SG_SD_maxeval=1000_hmax=10,9,[ -8.8 113.1],[-60],451.0
+9,SG_SD_maxeval=1000_hmax=10,10,[  2.8 111.2],[-60],415.0
+0,SG_RS_maxeval=1000_hmax=0,11,[ 12.3 108.9],[-60],930.0
+1,SG_RS_maxeval=1000_hmax=0,12,[1.00e-01 1.14e+02],[-60],18.0
+2,SG_RS_maxeval=1000_hmax=0,13,[-13.3 110.3],[-60],430.0
+3,SG_RS_maxeval=1000_hmax=0,14,[ -7.4 113.1],[-60],710.0
+4,SG_RS_maxeval=1000_hmax=0,15,[  7.7 112.3],[-60],407.0
+5,SG_RS_maxeval=1000_hmax=0,16,[  4.4 109.2],[-60],431.0
+6,SG_RS_maxeval=1000_hmax=0,17,[ -5.3 111.2],[-60],419.0
+7,SG_RS_maxeval=1000_hmax=0,18,[  8.1 108.5],[-60],322.0
+8,SG_RS_maxeval=1000_hmax=0,19,[ -31.  -110.4],[-57],inf
+9,SG_RS_maxeval=1000_hmax=0,20,[  1.4 108.4],[-60],114.0
+0,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,21,[ -28.89464196 -107.82158425],[-57],inf
+1,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,22,[  8.17915168 108.64061106],[-60],47.0
+2,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,23,[-17.13185542 111.97037403],[-60],197.0
+3,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,24,[-64.77223415  89.54029706],[-36],inf
+4,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,25,[ 77.78662686 143.14276164],[-36],inf
+5,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,26,[112.94388494  19.43770863],[-39],inf
+6,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,27,[ 2.16779595 -0.26675454],[-50],inf
+7,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,28,[100.55359561  42.55129206],[-39],inf
+8,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,29,[ 84.70672564 145.45449787],[-36],inf
+9,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,30,[ 117.14021761 -117.03102032],[-30],inf
+0,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,31,[-71.49792239  80.77198615],[-36],inf
+1,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,32,[ 85.51940593 -66.17358789],[-45],inf
+2,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,33,[-122.91090783 -106.95122339],[-32],inf
+3,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,34,[-154.53146448   68.07234267],[-28],inf
+4,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,35,[150.47953855 -77.48652308],[-30],inf
+5,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,36,[  1.66852377 109.4368574 ],[-60],262.0
+6,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,37,[  18.38080722 -111.5353539 ],[-51],inf
+7,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,38,[-90.38155651 -65.06622046],[-48],inf
+8,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,39,[2.46098858 5.27127683],[-50],inf
+9,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,40,[ 2.40660701 -2.7603642 ],[-50],inf
+0,FSA_maxeval=1000_T0=1_n0=1_alpha=2,41,[-56.64898874  96.34187162],[-36],inf
+1,FSA_maxeval=1000_T0=1_n0=1_alpha=2,42,[ -8.6936428  109.34041934],[-60],362.0
+2,FSA_maxeval=1000_T0=1_n0=1_alpha=2,43,[ 5.04478841 -1.46461287],[-50],inf
+3,FSA_maxeval=1000_T0=1_n0=1_alpha=2,44,[ -50.0979331  -103.06368099],[-57],inf
+4,FSA_maxeval=1000_T0=1_n0=1_alpha=2,45,[ -26.82359791 -107.08582354],[-57],inf
+5,FSA_maxeval=1000_T0=1_n0=1_alpha=2,46,[-1.64791036  4.22909429],[-50],inf
+6,FSA_maxeval=1000_T0=1_n0=1_alpha=2,47,[102.13263456 -52.06867485],[-45],inf
+7,FSA_maxeval=1000_T0=1_n0=1_alpha=2,48,[-100.70468029  129.77137555],[-24],inf
+8,FSA_maxeval=1000_T0=1_n0=1_alpha=2,49,[-99.06247383  50.05687066],[-42],inf
+9,FSA_maxeval=1000_T0=1_n0=1_alpha=2,50,[97.8 43.6],[-39],inf
+0,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,51,[  50.04993388 -161.37308351],[-34],inf
+1,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,52,[  28.77359299 -106.4374776 ],[-51],inf
+2,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,53,[ 13.7220755  113.72962935],[-60],381.0
+3,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,54,[ 96.64546212 132.53508493],[-36],inf
+4,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,55,[ -0.85130342 112.26870136],[-60],108.0
+5,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,56,[-10.97705592 109.13630408],[-60],239.0
+6,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,57,[  70.85627449 -147.46323506],[-34],inf
+7,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,58,[0.13734681 4.89204273],[-50],inf
+8,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,59,[  27.90714326 -111.23740406],[-51],inf
+9,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,60,[  24.75639954 -106.7443881 ],[-51],inf
+,of,heur,run,best_x,best_y,neval
+0,dartboard,SG_SD_maxeval=1000_hmax=10,1,[66.6 89.5],[-54],inf
+1,dartboard,SG_SD_maxeval=1000_hmax=10,2,[ -17.7 -107.7],[-57],inf
+2,dartboard,SG_SD_maxeval=1000_hmax=10,3,[-46.3 -96.7],[-57],inf
+3,dartboard,SG_SD_maxeval=1000_hmax=10,4,[ -47.6 -100.2],[-57],inf
+4,dartboard,SG_SD_maxeval=1000_hmax=10,5,[55.3 95.2],[-54],inf
+5,dartboard,SG_SD_maxeval=1000_hmax=10,6,[-4.9  0.8],[-50],inf
+6,dartboard,SG_SD_maxeval=1000_hmax=10,7,[  32.4 -103.3],[-51],inf
+7,dartboard,SG_SD_maxeval=1000_hmax=10,8,[ 17.9 113.2],[-60],273.0
+8,dartboard,SG_SD_maxeval=1000_hmax=10,9,[62.7 94.1],[-54],inf
+9,dartboard,SG_SD_maxeval=1000_hmax=10,10,[79.7 80.8],[-54],inf
+,of,heur,run,best_x,best_y,neval
+0,dartboard,SG_RS_maxeval=1000_hmax=0,11,[ -8.7 110.4],[-60],684.0
+1,dartboard,SG_RS_maxeval=1000_hmax=0,12,[  9.5 110.4],[-60],184.0
+2,dartboard,SG_RS_maxeval=1000_hmax=0,13,[ -7.7 109.9],[-60],154.0
+3,dartboard,SG_RS_maxeval=1000_hmax=0,14,[ -7.7 108.1],[-60],53.0
+4,dartboard,SG_RS_maxeval=1000_hmax=0,15,[72.4 86.7],[-54],inf
+5,dartboard,SG_RS_maxeval=1000_hmax=0,16,[ -9.3 112.6],[-60],680.0
+6,dartboard,SG_RS_maxeval=1000_hmax=0,17,[ 16.5 112. ],[-60],567.0
+7,dartboard,SG_RS_maxeval=1000_hmax=0,18,[-17.4 110.5],[-60],526.0
+8,dartboard,SG_RS_maxeval=1000_hmax=0,19,[ -9.6 114.1],[-60],66.0
+9,dartboard,SG_RS_maxeval=1000_hmax=0,20,[-16. 108.],[-60],431.0
+,of,heur,run,best_x,best_y,neval
+0,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,21,[ -3.86428513 162.51671372],[-40],inf
+1,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,22,[ -1.44720848 110.68940921],[-60],11.0
+2,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,23,[-96.19095727 -50.1101207 ],[-48],inf
+3,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,24,[-131.51108704   99.31960027],[-18],inf
+4,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,25,[74.31860375 78.96569112],[-54],inf
+5,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,26,[61.87686914 89.8164677 ],[-54],inf
+6,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,27,[148.26185732 -79.18060179],[-30],inf
+7,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,28,[-77.72945829 -76.67425593],[-48],inf
+8,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,29,[ -59.87796574 -154.26069412],[-38],inf
+9,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,30,[-103.57211159   30.80858033],[-42],inf
+,of,heur,run,best_x,best_y,neval
+0,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,31,[-112.6   17.9],[-42],inf
+1,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,32,[-86.06884599 -73.21015625],[-48],inf
+2,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,33,[ 83.14283692 -73.37690732],[-45],inf
+3,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,34,[-66.91049612  88.38083848],[-36],inf
+4,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,35,[ -23.84955471 -108.79493666],[-57],inf
+5,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,36,[ -4.23186687 165.42604128],[-40],inf
+6,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,37,[-49.35214436  95.21294871],[-36],inf
+7,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,38,[5.61618637 1.6817284 ],[-50],inf
+8,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,39,[  3.01963396 113.96787421],[-60],100.0
+9,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,40,[-157.64814786  -57.44557184],[-16],inf
+,of,heur,run,best_x,best_y,neval
+0,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,41,[-3.92169901 -2.68130534],[-50],inf
+1,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,42,[ 85.54288388 -70.58198264],[-45],inf
+2,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,43,[-80.64819767 -80.39030817],[-48],inf
+3,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,44,[ -30.66445465 -164.07009125],[-38],inf
+4,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,45,[ -35.60821054 -107.65448335],[-57],inf
+5,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,46,[1.73368148 1.22601626],[-50],inf
+6,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,47,[ -51.08809216 -159.28709149],[-38],inf
+7,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,48,[-71.55647942  86.99865856],[-36],inf
+8,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,49,[  25.2 -105.3],[-51],inf
+9,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,50,[-5.50424628  0.97673094],[-50],inf
+,of,heur,run,best_x,best_y,neval
+0,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,51,[ 84.77005516 -70.25299526],[-45],inf
+1,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,52,[ 12.1977852  113.06404067],[-60],11.0
+2,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,53,[  18.21314457 -105.88212985],[-51],inf
+3,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,54,[  19.48143661 -108.51706132],[-51],inf
+4,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,55,[101.18124639 -53.32188287],[-45],inf
+5,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,56,[-101.50168206   47.04646178],[-42],inf
+6,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,57,[  28.00217046 -110.03316907],[-51],inf
+7,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,58,[ -45.1 -163.7],[-38],inf
+8,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,59,[ 15.18135897 162.21426063],[-40],inf
+9,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,60,[60.11495916 89.50148233],[-54],inf
+,of,heur,run,best_x,best_y,neval
+0,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,61,[75.25328814 82.40444608],[-54],inf
+1,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,62,[ -0.36864118 111.28439217],[-60],530.0
+2,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,63,[107.01750441 121.71468534],[-36],inf
+3,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,64,[104.81353452  31.06333821],[-39],inf
+4,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,65,[ 82.5 -74.1],[-45],inf
+5,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,66,[  52.20131338 -160.40236331],[-34],inf
+6,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,67,[-50.26192457 -99.38451067],[-57],inf
+7,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,68,[ -41.63182802 -104.6102027 ],[-57],inf
+8,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,69,[-136.5021472   -88.48341866],[-32],inf
+9,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,70,[-14.08807278 110.37803491],[-60],519.0
+,of,heur,run,best_x,best_y,neval
+0,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,71,[108.6854288   21.91500262],[-39],inf
+1,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,72,[  2.6641777  108.98901312],[-60],712.0
+2,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,73,[ -6.39924394 111.91025018],[-60],710.0
+3,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,74,[-107.03433175   23.52279758],[-42],inf
+4,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,75,[76.53025655 83.4224675 ],[-54],inf
+5,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,76,[-83.24972737 -68.5448664 ],[-48],inf
+6,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,77,[  31.96134026 -161.52324959],[-34],inf
+7,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,78,[-107.66531018   36.04060044],[-42],inf
+8,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,79,[106.09547659  42.44448851],[-39],inf
+9,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,80,[-98.54920199  44.7034467 ],[-42],inf
+,of,heur,run,best_x,best_y,neval
+0,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,81,[ 11.18397691 114.01419048],[-60],419.0
+1,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,82,[-140.   -89.1],[-32],inf
+2,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,83,[0.77812069 6.11289328],[-50],inf
+3,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,84,[-4.57568064  1.10409552],[-50],inf
+4,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,85,[ 94.57949156 -50.81190057],[-45],inf
+5,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,86,[ 87.85644819 136.69974395],[-36],inf
+6,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,87,[ -21.34530588 -107.1333087 ],[-57],inf
+7,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,88,[ 132.09970894 -100.14592577],[-30],inf
+8,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,89,[ 126.74797543 -101.8017312 ],[-30],inf
+9,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,90,[ 94.10833873 141.13351437],[-36],inf
+,of,heur,run,best_x,best_y,neval
+0,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,91,[ 120.14733693 -110.16306922],[-30],inf
+1,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,92,[-0.3008419  0.1928063],[-50],inf
+2,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,93,[ -43.72465034 -105.89011193],[-57],inf
+3,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,94,[59.70944801 97.73040665],[-54],inf
+4,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,95,[ -65.03575307 -154.65932909],[-38],inf
+5,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,96,[-4.8418112   4.01140229],[-50],inf
+6,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,97,[-78.29644567 -73.15372858],[-48],inf
+7,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,98,[-97.85469746 -57.79773709],[-48],inf
+8,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,99,[ -55.40883086 -157.11599493],[-38],inf
+9,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,100,[ -25.09073667 -109.62582085],[-57],inf
+,of,heur,run,best_x,best_y,neval
+0,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,101,[-102.41776923   39.11457112],[-42],inf
+1,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,102,[-92.01039171 -55.34614074],[-48],inf
+2,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,103,[-43.83389698 -97.78179054],[-57],inf
+3,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,104,[-0.52445506 -4.5602678 ],[-50],inf
+4,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,105,[-51.28541865  96.51999378],[-36],inf
+5,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,106,[ 82.48975365 -76.22741246],[-45],inf
+6,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,107,[105.66591516  18.16963749],[-39],inf
+7,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,108,[-3.96893343  0.01528153],[-50],inf
+8,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,109,[-99.06337138  48.42824411],[-42],inf
+9,dartboard,FSA_maxeval=1000_T0=1e-10_n0=1_alpha=2,110,[-90.13712861 -64.10728979],[-48],inf
+,of,heur,run,best_x,best_y,neval
+0,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,111,[  2.72603213 107.19176248],[-60],146.0
+1,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,112,[  17.6957717  -107.14071772],[-51],inf
+2,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,113,[-6.70714035 13.79011349],[-25],inf
+3,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,114,[-5.1547389   2.00980785],[-50],inf
+4,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,115,[ -51.41669479 -101.14777336],[-57],inf
+5,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,116,[ -29.86548712 -104.03078054],[-57],inf
+6,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,117,[-99.71742384 -52.24865753],[-48],inf
+7,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,118,[ 94.22979686 -58.19382017],[-45],inf
+8,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,119,[5.1929872  1.50530113],[-50],inf
+9,dartboard,FSA_maxeval=1000_T0=0.01_n0=1_alpha=2,120,[-66.01193928  87.23594732],[-36],inf
+,of,heur,run,best_x,best_y,neval
+0,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,121,[-148.39825369   68.9454355 ],[-28],inf
+1,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,122,[103.04469239  38.46303516],[-39],inf
+2,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,123,[ -5.40912915 108.14273757],[-60],69.0
+3,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,124,[ 3.08079547 -4.36942806],[-50],inf
+4,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,125,[-21.98009533 166.8819274 ],[-40],inf
+5,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,126,[ 14.33708988 108.34391384],[-60],428.0
+6,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,127,[ -46.78522901 -160.22128016],[-38],inf
+7,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,128,[ -40.3 -159.6],[-38],inf
+8,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,129,[ 1.88143199 -3.97040895],[-50],inf
+9,dartboard,FSA_maxeval=1000_T0=1_n0=1_alpha=2,130,[ 20.28558932 164.56954284],[-40],inf
+,of,heur,run,best_x,best_y,neval
+0,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,131,[-92.61016999 -56.89995072],[-48],inf
+1,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,132,[  25.16656494 -107.8583679 ],[-51],inf
+2,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,133,[ 84.5 -67.2],[-45],inf
+3,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,134,[ -67.7179277  -148.73169985],[-38],inf
+4,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,135,[ 47.03956834 -98.84596897],[-51],inf
+5,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,136,[-22.64990202 163.23891402],[-40],inf
+6,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,137,[54.82209355 98.77004859],[-54],inf
+7,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,138,[-101.64164216   39.76547562],[-42],inf
+8,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,139,[  9.67255682 107.61075228],[-60],937.0
+9,dartboard,FSA_maxeval=1000_T0=inf_n0=1_alpha=2,140,[  50.11504989 -102.5040935 ],[-51],inf
+,of,heur,run,best_x,best_y,maxeval,neval
+0,dartboard,SG_SD_hmax=10,1,[ -35.8 -108.7],[-57],1000,inf
+1,dartboard,SG_SD_hmax=10,2,[2.1 4.6],[-50],1000,inf
+2,dartboard,SG_SD_hmax=10,3,[-101.8   50.2],[-42],1000,inf
+3,dartboard,SG_SD_hmax=10,4,[ 10.5 112.7],[-60],1000,41.0
+4,dartboard,SG_SD_hmax=10,5,[ -39.7 -107.1],[-57],1000,inf
+5,dartboard,SG_SD_hmax=10,6,[ -35.7 -103.9],[-57],1000,inf
+6,dartboard,SG_SD_hmax=10,7,[-3.1  0.7],[-50],1000,inf
+7,dartboard,SG_SD_hmax=10,8,[ 5.1 -0.3],[-50],1000,inf
+8,dartboard,SG_SD_hmax=10,9,[ 16. 109.],[-60],1000,531.0
+9,dartboard,SG_SD_hmax=10,10,[5.5 1.1],[-50],1000,inf
+,of,heur,run,best_x,best_y,maxeval,neval
+0,dartboard,SG_RS_hmax=0,11,[ 11. 110.],[-60],1000,233.0
+1,dartboard,SG_RS_hmax=0,12,[ -33.4 -104.4],[-57],1000,inf
+2,dartboard,SG_RS_hmax=0,13,[-16.4 106.6],[-60],1000,770.0
+3,dartboard,SG_RS_hmax=0,14,[-12.2 113.9],[-60],1000,99.0
+4,dartboard,SG_RS_hmax=0,15,[ -4.6 110.1],[-60],1000,576.0
+5,dartboard,SG_RS_hmax=0,16,[-17.2 111.7],[-60],1000,765.0
+6,dartboard,SG_RS_hmax=0,17,[ -9.4 109.2],[-60],1000,82.0
+7,dartboard,SG_RS_hmax=0,18,[-15.6 112. ],[-60],1000,539.0
+8,dartboard,SG_RS_hmax=0,19,[ -5.4 107.2],[-60],1000,193.0
+9,dartboard,SG_RS_hmax=0,20,[-11.5 114.1],[-60],1000,508.0
+,of,heur,run,best_x,best_y,maxeval,neval
+0,dartboard,FSA_T0=1e-10_n0=1_alpha=2,21,[  27.87255501 -111.54039556],[-51],1000,inf
+1,dartboard,FSA_T0=1e-10_n0=1_alpha=2,22,[-12.25529907 112.700794  ],[-60],1000,97.0
+2,dartboard,FSA_T0=1e-10_n0=1_alpha=2,23,[-111.50663767   22.5381198 ],[-42],1000,inf
+3,dartboard,FSA_T0=1e-10_n0=1_alpha=2,24,[ -35.56676751 -108.50685831],[-57],1000,inf
+4,dartboard,FSA_T0=1e-10_n0=1_alpha=2,25,[51.11792682 98.15042393],[-54],1000,inf
+5,dartboard,FSA_T0=1e-10_n0=1_alpha=2,26,[-105.64482411   28.00232493],[-42],1000,inf
+6,dartboard,FSA_T0=1e-10_n0=1_alpha=2,27,[ -33.84996694 -105.04135149],[-57],1000,inf
+7,dartboard,FSA_T0=1e-10_n0=1_alpha=2,28,[-94.77489823 -60.98780528],[-48],1000,inf
+8,dartboard,FSA_T0=1e-10_n0=1_alpha=2,29,[67.09085348 87.96043546],[-54],1000,inf
+9,dartboard,FSA_T0=1e-10_n0=1_alpha=2,30,[-106.43106965   27.27757177],[-42],1000,inf
+,of,heur,run,best_x,best_y,maxeval,neval
+0,dartboard,FSA_T0=0.01_n0=1_alpha=2,31,[-1.38288688 -5.69526314],[-50],1000,inf
+1,dartboard,FSA_T0=0.01_n0=1_alpha=2,32,[ 4.29623433 -2.09898969],[-50],1000,inf
+2,dartboard,FSA_T0=0.01_n0=1_alpha=2,33,[-107.85157858   17.88344452],[-42],1000,inf
+3,dartboard,FSA_T0=0.01_n0=1_alpha=2,34,[-89.18481027 -62.06125511],[-48],1000,inf
+4,dartboard,FSA_T0=0.01_n0=1_alpha=2,35,[-79.37995702 -73.52675185],[-48],1000,inf
+5,dartboard,FSA_T0=0.01_n0=1_alpha=2,36,[-1.91814856 -5.31608213],[-50],1000,inf
+6,dartboard,FSA_T0=0.01_n0=1_alpha=2,37,[ -0.22499188 114.55425181],[-60],1000,269.0
+7,dartboard,FSA_T0=0.01_n0=1_alpha=2,38,[-76.50980558  77.70214539],[-36],1000,inf
+8,dartboard,FSA_T0=0.01_n0=1_alpha=2,39,[146.2824223  -83.36173811],[-30],1000,inf
+9,dartboard,FSA_T0=0.01_n0=1_alpha=2,40,[-57.69898936  97.28027808],[-36],1000,inf
+,of,heur,run,best_x,best_y,maxeval,neval
+0,dartboard,FSA_T0=1_n0=1_alpha=2,41,[ 5.28771342 -0.17365923],[-50],1000,inf
+1,dartboard,FSA_T0=1_n0=1_alpha=2,42,[ 5.56933405 -2.65815076],[-50],1000,inf
+2,dartboard,FSA_T0=1_n0=1_alpha=2,43,[ 98.33647401 -50.7998451 ],[-45],1000,inf
+3,dartboard,FSA_T0=1_n0=1_alpha=2,44,[ 16.30652587 168.35980039],[-40],1000,inf
+4,dartboard,FSA_T0=1_n0=1_alpha=2,45,[-164.67325045   28.46343458],[-28],1000,inf
+5,dartboard,FSA_T0=1_n0=1_alpha=2,46,[ -34.25857694 -105.57383757],[-57],1000,inf
+6,dartboard,FSA_T0=1_n0=1_alpha=2,47,[-0.87214697 -5.80251688],[-50],1000,inf
+7,dartboard,FSA_T0=1_n0=1_alpha=2,48,[-1.9  2. ],[-50],1000,inf
+8,dartboard,FSA_T0=1_n0=1_alpha=2,49,[ 98.50011318 -56.1803863 ],[-45],1000,inf
+9,dartboard,FSA_T0=1_n0=1_alpha=2,50,[ 91.54348706 135.75417354],[-36],1000,inf
+,of,heur,run,best_x,best_y,maxeval,neval
+0,dartboard,FSA_T0=inf_n0=1_alpha=2,51,[ 49.68513252 -98.41975336],[-51],1000,inf
+1,dartboard,FSA_T0=inf_n0=1_alpha=2,52,[-25.51228126 162.15968745],[-40],1000,inf
+2,dartboard,FSA_T0=inf_n0=1_alpha=2,53,[-110.73913031   -3.73925895],[-33],1000,inf
+3,dartboard,FSA_T0=inf_n0=1_alpha=2,54,[-11.42371692 110.50322673],[-60],1000,687.0
+4,dartboard,FSA_T0=inf_n0=1_alpha=2,55,[-4.43031552 -2.68174064],[-50],1000,inf
+5,dartboard,FSA_T0=inf_n0=1_alpha=2,56,[-23.03890585 162.3563701 ],[-40],1000,inf
+6,dartboard,FSA_T0=inf_n0=1_alpha=2,57,[1.03333836 5.71789272],[-50],1000,inf
+7,dartboard,FSA_T0=inf_n0=1_alpha=2,58,[ -26.9 -162.6],[-38],1000,inf
+8,dartboard,FSA_T0=inf_n0=1_alpha=2,59,[ 125.93713455 -112.58861871],[-30],1000,inf
+9,dartboard,FSA_T0=inf_n0=1_alpha=2,60,[0.04380066 3.93617817],[-50],1000,inf
+,of,heur,run,best_x,best_y,maxeval,neval
+0,dartboard,DE_N=10_CR=0.5_F=1,1,"[2.5999999999999943, 108.9]",[-60],1000,142.0
+1,dartboard,DE_N=10_CR=0.5_F=1,2,"[-2.799999999999997, 113.39999999999998]",[-60],1000,76.0
+2,dartboard,DE_N=10_CR=0.5_F=1,3,"[-47.40000000000004, -101.69999999999997]",[-57],1000,inf
+3,dartboard,DE_N=10_CR=0.5_F=1,4,"[-1.8000000000000256, 107.60000000000002]",[-60],1000,116.0
+4,dartboard,DE_N=10_CR=0.5_F=1,5,"[17.699999999999974, 112.30000000000001]",[-60],1000,197.0
+5,dartboard,DE_N=10_CR=0.5_F=1,6,"[-2.1999999999999957, 112.49999999999999]",[-60],1000,144.0
+6,dartboard,DE_N=10_CR=0.5_F=1,7,"[76.5, 80.39999999999999]",[-54],1000,inf
+7,dartboard,DE_N=10_CR=0.5_F=1,8,"[13.099999999999994, 107.1]",[-60],1000,171.0
+8,dartboard,DE_N=10_CR=0.5_F=1,9,"[-3.3999999999999915, 111.00000000000003]",[-60],1000,148.0
+9,dartboard,DE_N=10_CR=0.5_F=1,10,[67.6 90.7],[-54],1000,inf
+,of,heur,run,best_x,best_y,maxeval,neval
+0,dartboard,DE_N=10_CR=0.5_F=1,11,"[-20.8, -109.8]",[-57],1000,inf
+1,dartboard,DE_N=10_CR=0.5_F=1,12,"[95.4, -51.500000000000014]",[-45],1000,inf
+2,dartboard,DE_N=10_CR=0.5_F=1,13,"[-4.199999999999989, 114.69999999999999]",[-60],1000,244.0
+3,dartboard,DE_N=10_CR=0.5_F=1,14,"[-1.8000000000000114, 5.100000000000023]",[-50],1000,inf
+4,dartboard,DE_N=10_CR=0.5_F=1,15,[-0.8 -5.2],[-50],1000,inf
+5,dartboard,DE_N=10_CR=0.5_F=1,16,"[16.300000000000146, 105.79999999999993]",[-60],1000,140.0
+6,dartboard,DE_N=10_CR=0.5_F=1,17,"[15.300000000000004, 113.0]",[-60],1000,12.0
+7,dartboard,DE_N=10_CR=0.5_F=1,18,"[-4.699999999999989, 110.89999999999999]",[-60],1000,47.0
+8,dartboard,DE_N=10_CR=0.5_F=1,19,"[58.2, 94.3]",[-54],1000,inf
+9,dartboard,DE_N=10_CR=0.5_F=1,20,"[-42.10000000000001, -104.60000000000001]",[-57],1000,inf
+,of,heur,run,best_x,best_y,maxeval,neval
+0,dartboard,DE_N=10_CR=0.5_F=1,21,"[-103.5, 27.800000000000026]",[-42],1000,inf
+1,dartboard,DE_N=10_CR=0.5_F=1,22,"[-9.900000000000016, 112.30000000000001]",[-60],1000,142.0
+2,dartboard,DE_N=10_CR=0.5_F=1,23,[-90.5 -68.5],[-48],1000,inf
+3,dartboard,DE_N=10_CR=0.5_F=1,24,"[16.100000000000016, 106.4]",[-60],1000,310.0
+4,dartboard,DE_N=10_CR=0.5_F=1,25,"[-10.599999999999994, 113.39999999999995]",[-60],1000,330.0
+5,dartboard,DE_N=10_CR=0.5_F=1,26,"[-38.500000000000014, -106.9]",[-57],1000,inf
+6,dartboard,DE_N=10_CR=0.5_F=1,27,"[-49.10000000000001, -103.2]",[-57],1000,inf
+7,dartboard,DE_N=10_CR=0.5_F=1,28,"[-11.600000000000016, 111.29999999999997]",[-60],1000,173.0
+8,dartboard,DE_N=10_CR=0.5_F=1,29,"[1.3000000000000185, 111.5]",[-60],1000,296.0
+9,dartboard,DE_N=10_CR=0.5_F=1,30,"[-27.40000000000005, -105.8]",[-57],1000,inf
+,of,heur,run,best_x,best_y,maxeval,neval
+0,dartboard,DE_N=10_CR=0.5_F=1,31,"[2.500000000000014, 5.4]",[-50],1000,inf
+1,dartboard,DE_N=10_CR=0.5_F=1,32,"[16.50000000000001, 113.2]",[-60],1000,257.0
+2,dartboard,DE_N=10_CR=0.5_F=1,33,"[68.6, 91.5]",[-54],1000,inf
+3,dartboard,DE_N=10_CR=0.5_F=1,34,"[-40.500000000000014, -107.1]",[-57],1000,inf
+4,dartboard,DE_N=10_CR=0.5_F=1,35,"[3.5000000000000036, 109.2]",[-60],1000,31.0
+5,dartboard,DE_N=10_CR=0.5_F=1,36,"[67.89999999999998, 85.10000000000001]",[-54],1000,inf
+6,dartboard,DE_N=10_CR=0.5_F=1,37,"[1.3, 113.39999999999999]",[-60],1000,86.0
+7,dartboard,DE_N=10_CR=0.5_F=1,38,"[-9.000000000000028, 113.5]",[-60],1000,140.0
+8,dartboard,DE_N=10_CR=0.5_F=1,39,"[17.099999999999998, 162.29999999999987]",[-40],1000,inf
+9,dartboard,DE_N=10_CR=0.5_F=1,40,"[10.500000000000014, 112.30000000000001]",[-60],1000,80.0
+,of,heur,run,best_x,best_y,maxeval,neval
+0,dartboard,GOmix_N=5_M=15_T1=1_T2=0.1,41,[0.2 0.2],[-50],1000,inf
+1,dartboard,GOmix_N=5_M=15_T1=1_T2=0.1,42,[ -32.58 -104.23],[-57],1000,inf
+2,dartboard,GOmix_N=5_M=15_T1=1_T2=0.1,43,[ 98.4 -57.8],[-45],1000,inf
+3,dartboard,GOmix_N=5_M=15_T1=1_T2=0.1,44,[1.  0.7],[-50],1000,inf
+4,dartboard,GOmix_N=5_M=15_T1=1_T2=0.1,45,[-12.7  109.73],[-60],1000,540.0
+5,dartboard,GOmix_N=5_M=15_T1=1_T2=0.1,46,[-24.4 163.9],[-40],1000,inf
+6,dartboard,GOmix_N=5_M=15_T1=1_T2=0.1,47,[-106.4    24.88],[-42],1000,inf
+7,dartboard,GOmix_N=5_M=15_T1=1_T2=0.1,48,[-0.38 -1.57],[-50],1000,inf
+8,dartboard,GOmix_N=5_M=15_T1=1_T2=0.1,49,[ 2.78 -3.62],[-50],1000,inf
+9,dartboard,GOmix_N=5_M=15_T1=1_T2=0.1,50,[136.  -92.9],[-30],1000,inf
+,of,heur,run,best_x,best_y,maxeval,neval
+0,dartboard,GOuni_N=5_M=15_T1=1_T2=0.1,51,[-126.  -105.9],[-32],1000,inf
+1,dartboard,GOuni_N=5_M=15_T1=1_T2=0.1,52,[ 15.2  109.16],[-60],1000,39.0
+2,dartboard,GOuni_N=5_M=15_T1=1_T2=0.1,53,[-111.19   25.68],[-42],1000,inf
+3,dartboard,GOuni_N=5_M=15_T1=1_T2=0.1,54,[ -25.4 -106.2],[-57],1000,inf
+4,dartboard,GOuni_N=5_M=15_T1=1_T2=0.1,55,[ 2.6  -1.89],[-50],1000,inf
+5,dartboard,GOuni_N=5_M=15_T1=1_T2=0.1,56,[ 90.07 -66.39],[-45],1000,inf
+6,dartboard,GOuni_N=5_M=15_T1=1_T2=0.1,57,[ -44.9 -101.2],[-57],1000,inf
+7,dartboard,GOuni_N=5_M=15_T1=1_T2=0.1,58,[-0.4  0.1],[-50],1000,inf
+8,dartboard,GOuni_N=5_M=15_T1=1_T2=0.1,59,[ -38.06 -103.15],[-57],1000,inf
+9,dartboard,GOuni_N=5_M=15_T1=1_T2=0.1,60,[148.74  66.92],[-26],1000,inf
+,of,heur,run,best_x,best_y,maxeval,neval
+0,dartboard,GOrnd_N=5_M=15_T1=1_T2=0.1,61,[5.2  2.05],[-50],1000,inf
+1,dartboard,GOrnd_N=5_M=15_T1=1_T2=0.1,62,[-1.  -0.6],[-50],1000,inf
+2,dartboard,GOrnd_N=5_M=15_T1=1_T2=0.1,63,[-1.22 -0.97],[-50],1000,inf
+3,dartboard,GOrnd_N=5_M=15_T1=1_T2=0.1,64,[4.03 2.41],[-50],1000,inf
+4,dartboard,GOrnd_N=5_M=15_T1=1_T2=0.1,65,[-0.65  3.33],[-50],1000,inf
+5,dartboard,GOrnd_N=5_M=15_T1=1_T2=0.1,66,[-111.6    18.26],[-42],1000,inf
+6,dartboard,GOrnd_N=5_M=15_T1=1_T2=0.1,67,[-152.25   73.05],[-28],1000,inf
+7,dartboard,GOrnd_N=5_M=15_T1=1_T2=0.1,68,[137.69 -85.7 ],[-30],1000,inf
+8,dartboard,GOrnd_N=5_M=15_T1=1_T2=0.1,69,[ 16.8  112.14],[-60],1000,11.0
+9,dartboard,GOrnd_N=5_M=15_T1=1_T2=0.1,70,[-4.08 -1.82],[-50],1000,inf

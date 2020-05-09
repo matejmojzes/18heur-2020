@@ -1,15 +1,10 @@
 import math
 import numpy as np
-import matplotlib
 from objfun import ObjFun
-from matplotlib.colors import LightSource
+
 
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
-from matplotlib import cm
-
-
-
 
 
 def cart_to_pol(x):
@@ -21,7 +16,7 @@ def cart_to_pol(x):
 def pol_to_car(alpha, distance):
     x = distance * np.cos(alpha)
     y = distance * np.sin(alpha)
-    return [x, y]
+    return [np.round(x, 1), np.round(y, 1)]
 
 
 class Dartboard(ObjFun):
@@ -51,12 +46,16 @@ class Dartboard(ObjFun):
             self.dartboard_angle = math.pi / len(self.sectors)
 
         self.sector_angle = 2 * math.pi / len(self.sectors)
-
-        super().__init__(-1*self.count_max_score(), [-1*self.ring_params[-1][0], -1*self.ring_params[-1][0]], [1*self.ring_params[-1][0], 1*self.ring_params[-1][0]])
+        name = 'dartboard'
+        super().__init__(-1*self.count_max_score(), np.array([-1*self.ring_params[-1][0], -1*self.ring_params[-1][0]]), np.array([1*self.ring_params[-1][0], 1*self.ring_params[-1][0]]), name)
 
     def evaluate(self, x):
 
         alpha, distance = cart_to_pol(x)
+        if not isinstance(alpha, np.ndarray):
+            alpha = np.array([alpha])
+            distance = np.array([distance])
+
         index = alpha < 0
         alpha[index] = 2 * math.pi + alpha[index]
         index = (alpha + self.dartboard_angle) // self.sector_angle
@@ -80,19 +79,20 @@ class Dartboard(ObjFun):
         return max(max_points * self.ring_params[:, 1] + self.ring_params[:, 2])
 
     def generate_point(self):
-        return pol_to_car(np.random.uniform(0, 2*math.pi, 1), np.random.uniform(0, self.a, 1))
+        x, y = pol_to_car(np.random.uniform(0, 2*math.pi, 1), np.random.uniform(0, self.a, 1))
+        return np.array([x[0], y[0]])
 
     def get_neighborhood(self, x, d=1):
-        epsilon = 0.01
+        epsilon = 1# mm
         nd = []
         for i in range(len(x)):
-            if x[i][0] > self.a[i]:
+            if x[i] > self.a[i]:
                 xx = x.copy()
-                xx[i][0] -= 0.01
+                xx[i] -= epsilon
                 nd.append(xx)
-            if x[i][0] < self.b[i]:
+            if x[i] < self.b[i]:
                 xx = x.copy()
-                xx[i][0] += 0.01
+                xx[i] += epsilon
                 nd.append(xx)
         return nd
 
@@ -132,8 +132,9 @@ class DartsAvgScore(ObjFun):
         self.ring_params = self.dartboard.ring_params
         self.dartboard_angle = self.dartboard.dartboard_angle
         self.sector_angle = self.dartboard.sector_angle
+        name = 'dartsscore'
 
-        super().__init__(self.dartboard.fstar, self.dartboard.a, self.dartboard.b)
+        super().__init__(self.dartboard.fstar, self.dartboard.a, self.dartboard.b, name)
 
     def generate_point(self):
         """
