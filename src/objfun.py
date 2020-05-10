@@ -40,10 +40,11 @@ class ObjFun(object):
         """
         raise NotImplementedError("Objective function must implement its own random point generator")
 
-    def get_neighborhood(self, x):
+    def get_neighborhood(self, x, d=1):
         """
         Solution neighborhood generating function placeholder
         :param x: point
+        :param d: diameter
         :return: list of points in the neighborhood of the x
         """
         raise NotImplementedError("Objective function must implement its own neighborhood generator")

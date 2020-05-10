@@ -2,7 +2,6 @@ import math
 import numpy as np
 from objfun import ObjFun
 
-
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 
@@ -32,13 +31,13 @@ class Dartboard(ObjFun):
             self.ring_params = ring_params
         else:
             self.ring_params = np.array([
-                                [6.35, 0, 50],
-                                [15.9, 0, 25],
-                                [107, 1, 0],
-                                [115, 3, 0],
-                                [162, 1, 0],
-                                [170, 2, 0],
-                                ])
+                [6.35, 0, 50],
+                [15.9, 0, 25],
+                [107, 1, 0],
+                [115, 3, 0],
+                [162, 1, 0],
+                [170, 2, 0],
+            ])
 
         if sectors_angle is not None:
             self.dartboard_angle = sectors_angle
@@ -47,10 +46,11 @@ class Dartboard(ObjFun):
 
         self.sector_angle = 2 * math.pi / len(self.sectors)
         name = 'dartboard'
-        super().__init__(-1*self.count_max_score(), np.array([-1*self.ring_params[-1][0], -1*self.ring_params[-1][0]]), np.array([1*self.ring_params[-1][0], 1*self.ring_params[-1][0]]), name)
+        a = np.array([-1 * self.ring_params[-1][0], -1 * self.ring_params[-1][0]])
+        b = np.array([self.ring_params[-1][0], self.ring_params[-1][0]])
+        super().__init__(-1 * self.count_max_score(), a, b, name)
 
     def evaluate(self, x):
-
         alpha, distance = cart_to_pol(x)
         if not isinstance(alpha, np.ndarray):
             alpha = np.array([alpha])
@@ -66,12 +66,12 @@ class Dartboard(ObjFun):
 
         score[distance > self.ring_params[-1][0]] = 0
 
-        for i in range(len(self.ring_params)-1, 0, -1):
+        for i in range(len(self.ring_params) - 1, 0, -1):
             index = np.logical_and(self.ring_params[i][0] > distance, distance >= self.ring_params[i - 1][0])
             score[index] = self.ring_params[i][1] * score[index] + self.ring_params[i][2]
         index = distance < self.ring_params[0][0]
         score[index] = self.ring_params[0][1] * score[index] + self.ring_params[0][2]
-        score = -1*score
+        score = -1 * score
         return score
 
     def count_max_score(self):
@@ -79,37 +79,42 @@ class Dartboard(ObjFun):
         return max(max_points * self.ring_params[:, 1] + self.ring_params[:, 2])
 
     def generate_point(self):
-        x, y = pol_to_car(np.random.uniform(0, 2*math.pi, 1), np.random.uniform(0, self.a, 1))
+        x, y = pol_to_car(np.random.uniform(0, 2 * math.pi, 1), np.random.uniform(0, self.a, 1))
         return np.array([x[0], y[0]])
 
-    def get_neighborhood(self, x, d=1):
-        epsilon = 1# mm
-        nd = []
-        for i in range(len(x)):
-            if x[i] > self.a[i]:
-                xx = x.copy()
-                xx[i] -= epsilon
-                nd.append(xx)
-            if x[i] < self.b[i]:
-                xx = x.copy()
-                xx[i] += epsilon
-                nd.append(xx)
-        return nd
+    def get_neighborhood(self, x, d=2):
+        epsilon = 1  # mm
+        neighborhood = []
+        searched_points = [list(x)]
+        for round in range(d):
+            new_searched_points = []
+            for point in searched_points:
+                for i in range(len(point)):
+                    if point[i] > self.a[i]:
+                        xx = point.copy()
+                        xx[i] -= epsilon
+                        if xx not in searched_points:
+                            new_searched_points.append(xx)
+                        if xx not in neighborhood:
+                            neighborhood.append(xx)
+                    if point[i] < self.b[i]:
+                        xx = point.copy()
+                        xx[i] += epsilon
+                        if xx not in searched_points:
+                            new_searched_points.append(xx)
+                        if xx not in neighborhood:
+                            neighborhood.append(xx)
+            searched_points = new_searched_points
+        return neighborhood
 
 
 class DartsAvgScore(ObjFun):
-
     """
     Generic objective function super-class
     """
 
     def __init__(self, variance, iterations=None, dartboard=None):
-        """
-        Default initialization function that sets:
-        :param fstar: f^* value to be reached (can be -inf)
-        :param a: domain lower bound vector
-        :param b: domain upper bound vector
-        """
+
         if isinstance(variance, list):
             if isinstance(variance[0], list):
                 self.covariance = variance
@@ -119,7 +124,7 @@ class DartsAvgScore(ObjFun):
             self.covariance = [[variance, 0], [0, variance]]
 
         if iterations is None:
-            self.iterations = 100
+            self.iterations = 30000
         else:
             self.iterations = iterations
 
@@ -133,8 +138,10 @@ class DartsAvgScore(ObjFun):
         self.dartboard_angle = self.dartboard.dartboard_angle
         self.sector_angle = self.dartboard.sector_angle
         name = 'dartsscore'
-
         super().__init__(self.dartboard.fstar, self.dartboard.a, self.dartboard.b, name)
+
+        self.cache = np.full([int((self.b[0] - self.a[0]) * 10), int((self.b[1] - self.a[1]) * 10)], np.nan,
+                             dtype=np.float)
 
     def generate_point(self):
         """
@@ -149,7 +156,7 @@ class DartsAvgScore(ObjFun):
         :param x: point
         :return: list of points in the neighborhood of the x
         """
-        return self.dartboard.get_neighborhood(x)
+        return self.dartboard.get_neighborhood(x, d)
 
     def evaluate(self, x):
         """
@@ -157,9 +164,27 @@ class DartsAvgScore(ObjFun):
         :param x: point
         :return: objective function value
         """
-        avg_score = 0*x[0]
-        for i in range(len(x[0])):
-            avg_score[i] = np.average(self.dartboard.evaluate(np.random.multivariate_normal([x[0][i], x[1][i]], self.covariance, self.iterations).T))
+        if isinstance(x[0], np.ndarray):
+            x1 = x[0]
+            x2 = x[1]
+        else:
+            x1 = np.array([x[0]])
+            x2 = np.array([x[1]])
+
+        m, n = self.cache.shape
+        avg_score = np.full(x1.shape, 0, dtype=float)
+        for i in range(len(x1)):
+            x1_index = int((x1[i] + self.b[0]) * 10)
+            x2_index = int((x2[i] + self.b[1]) * 10)
+            if m > x1_index and n > x2_index and x1_index >= 0 and x2_index >= 0:
+                if np.isnan(self.cache[x1_index, x2_index]):
+                    avg_score[i] = np.average(self.dartboard.evaluate(
+                        np.random.multivariate_normal([x1[i], x2[i]], self.covariance, self.iterations).T))
+                    self.cache[x1_index, x2_index] = avg_score[i]
+                else:
+                    avg_score[i] = self.cache[x1_index, x2_index]
+            else:
+                avg_score[i] = 0
         return avg_score
 
 
@@ -175,35 +200,39 @@ class DartsPlotter(object):
 
         score = dartboard.evaluate([np.ravel(x[0]), np.ravel(x[1])])
 
-        score = -1*score.reshape(x[0].shape)
+        score = -1 * score.reshape(x[0].shape)
 
         self.plot_flat_dartboard(dartboard)
 
         self.ax.plot_surface(x[0], x[1], score, linewidth=0, alpha=0.9, vmin=0,
-                        rstride=10, cstride=10, antialiased=False, cmap='pink', shade=True)
+                             rstride=10, cstride=10, antialiased=False, cmap='pink', shade=True)
         self.set_axis()
 
     def scatter_points(self, dartboard, x):
         self.plot_flat_dartboard(dartboard)
-        self.ax.scatter(x[0], x[1], -1*dartboard.evaluate(x), cmap='coolwarm')
+        self.ax.scatter(x[0], x[1], -1 * dartboard.evaluate(x), cmap='coolwarm')
         self.set_axis()
 
-    def plot_points(self, dartboard, x):
+    def plot_points(self, dartboard, x, y):
         self.plot_flat_dartboard(dartboard)
-        z = -1*dartboard.evaluate(x)
+        z = []
+        for array in y:
+            z.append(-1*array[0])
 
         for i in range(1, len(x[0])):
-            self.ax.plot([x[0][i-1], x[0][i]], [x[1][i-1], x[1][i]], [z[i-1], z[i]], c=[180 / 255, 180 / 255, 180 / 255], linewidth=1)
+            self.ax.plot([x[0][i - 1], x[0][i]], [x[1][i - 1], x[1][i]], [z[i - 1], z[i]],
+                         c=[180 / 255, 180 / 255, 180 / 255], linewidth=1)
         self.ax.scatter(x[0], x[1], z, cmap='coolwarm')
         self.set_axis()
 
     def show_numbers(self, dartboard):
         number_angles = np.arange(0, 2 * math.pi, dartboard.sector_angle)
-        numbers_distance = 0*number_angles + dartboard.ring_params[-1][0] * 1.2
+        numbers_distance = 0 * number_angles + dartboard.ring_params[-1][0] * 1.2
         x = numbers_distance * np.cos(number_angles)
         y = numbers_distance * np.sin(number_angles)
         for i in range(len(number_angles)):
-            self.ax.text(x[i], y[i], 0, dartboard.sectors[i], horizontalalignment='center', fontsize=12, color=[180 / 255, 180 / 255, 180 / 255])
+            self.ax.text(x[i], y[i], 0, dartboard.sectors[i], horizontalalignment='center', fontsize=12,
+                         color=[180 / 255, 180 / 255, 180 / 255])
 
     def set_axis(self):
         self.ax.set_xlabel('Osa: x [mm]')
@@ -216,7 +245,7 @@ class DartsPlotter(object):
         self.ax.view_init(elev=85, azim=-90)
 
     def circuit_points_meshgrid(self, step_angle, step_dist, radius):
-        f = np.arange(0, 2*math.pi, step_angle)
+        f = np.arange(0, 2 * math.pi, step_angle)
         f = np.append(f, 2 * math.pi - self.epsilon)
         [alpha, distance] = np.meshgrid(f, np.arange(0, radius, step_dist))
         # alpha = alpha.flatten()
@@ -227,7 +256,7 @@ class DartsPlotter(object):
         return [x, y]
 
     def draw_ellipse(self, x0, y0, xR, yR):
-        t = np.arange(-1*math.pi, math.pi, 0.01)
+        t = np.arange(-1 * math.pi, math.pi, 0.01)
         x = x0 + xR * np.cos(t)
         y = y0 + yR * np.sin(t)
         self.ax.plot(x, y, 0, c='black', linewidth=0.5)
@@ -235,11 +264,11 @@ class DartsPlotter(object):
     def plot_flat_dartboard(self, dartboard):
 
         for i in range(0, len(dartboard.ring_params)):
-            self.draw_ellipse(0, 0, dartboard.ring_params[i][0],  dartboard.ring_params[i][0])
+            self.draw_ellipse(0, 0, dartboard.ring_params[i][0], dartboard.ring_params[i][0])
 
         lines_angle = np.arange(dartboard.dartboard_angle, 2 * math.pi, dartboard.sector_angle)
-        lines_start = 0*lines_angle + dartboard.ring_params[1][0]
-        lines_end = 0*lines_angle + dartboard.ring_params[-1][0] * 1.3
+        lines_start = 0 * lines_angle + dartboard.ring_params[1][0]
+        lines_end = 0 * lines_angle + dartboard.ring_params[-1][0] * 1.3
 
         start_x, start_y = pol_to_car(lines_angle, lines_start)
         end_x, end_y = pol_to_car(lines_angle, lines_end)
@@ -247,5 +276,3 @@ class DartsPlotter(object):
         for i in range(len(start_x)):
             self.ax.plot([start_x[i], end_x[i]], [start_y[i], end_y[i]], c='black', linewidth=0.5)
         self.show_numbers(dartboard)
-
-

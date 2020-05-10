@@ -74,7 +74,7 @@ class GeneticOptimization(Heuristic):
         self.mutation = mutation
         self.crossover = crossover
 
-        self.name = 'GO'
+        self.name = 'GO' + self.crossover.get_name() + mutation.get_name()
 
     def get_specs(self):
         return self.get_name() + self.crossover.get_name() + '_N={}_M={}_T1={}_T2={}'.format(self.N, self.M, self.Tsel1, self.Tsel2)
