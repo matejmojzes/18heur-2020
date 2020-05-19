@@ -1,22 +1,20 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# $\boldsymbol{x}\in\mathbb{R}^{d}$, kde d$\in\mathbb{N}$ je konečné, např. 100. Dál pro $\boldsymbol{x}$ platí 
+# Let $\boldsymbol{x}\in\mathbb{R}^{d}$, where d$\in\mathbb{N}$ is finite, e.g. 100. Furthermore, for $\boldsymbol{x}$ $\sum_{k=1}^{d}x_{k}=1\wedge\left(\forall k\in\left\{ 1,2,\ldots,d\right\} \right)\left(\boldsymbol{x}_{k}>0\right)$ holds.
+# This condition ensures the form of a distribution with finite support of $\boldsymbol{x}$. 
 # 
-# $\sum_{k=1}^{d}x_{k}=1\wedge\left(\forall k\in\left\{ 1,2,\ldots,d\right\} \right)\left(\boldsymbol{x}_{k}>0\right)$.
-# 
-# Tato podmínka dává $\boldsymbol{x}$ formu distribuce. 
-# 
-# V mojí optimalizaci mám data $\left\{ \alpha\right\} _{i\in\mathbb{N}}\in\mathbb{R}^{d}$ bez dalších omezení. Optimalizuju funkcionál
+# The paramers of the problem are $\left\{ \boldsymbol{\alpha}\right\} _{i\in\mathbb{N}}\in\mathbb{R}^{d}$. There are no further limitations for $\boldsymbol{\alpha}_{i}$.
+# Then, the following function is to be optimized:
 # 
 # $-\sum_{i}\boldsymbol{\alpha}_{i}\cdot\boldsymbol{x}$,
 # 
-# kde struktura $\alpha_{i,k}=\left\{ \begin{array}{cc}
-# k\Delta-\Delta_{i,0}, & \text{ pro }k<m_{i},\\
-# 0, & \text{ jinak}.
+# where the structure of $\alpha$ is $\alpha_{i,k}=\left\{ \begin{array}{cc}
+# k\Delta-\Delta_{i,0}, & \text{ for }k<m_{i},\\
+# 0, & \text{ else}.
 # \end{array}\right.$.
 # 
-# To znamená, že $\boldsymbol{\alpha}_{i}$ závisí pouze na dvou parametrech $\Delta_{i}\in\mathbb{R}$ a $0\leq m_{i}\leq d$.
+# The $\boldsymbol{\alpha}_{i}$ depends on two parameters $\Delta_{i}\in\mathbb{R}$ and $0\leq m_{i}\leq d$  only.
 
 # In[1]:
 
@@ -37,15 +35,35 @@ get_ipython().run_line_magic('autoreload', '2')
 
 # Import external libraries
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 # In[3]:
 
 
-import objfun_distribution_opt as dopt
+# Import external libraries
+import pandas as pd
+from tqdm.notebook import tqdm
 
 
 # In[4]:
+
+
+def rel(x):
+    return len([n for n in x if n < np.inf])/len(x)
+def mne(x):
+    return np.mean([n for n in x if n < np.inf])
+def feo(x):
+    return mne(x)/rel(x)
+
+
+# In[5]:
+
+
+import objfun_distribution_opt as dopt
+
+
+# In[6]:
 
 
 alphas = [{"r": 15, "m": 10},{"r": 12, "m": 9.5},{"r": 12, "m": 9.5},{"r": 12, "m": 9.5},{"r": 12, "m": 9.5}]
@@ -62,12 +80,9 @@ print(problem.alphas)
 print(problem.evaluate(x))
 
 
-# - penalizace
-# - jako $f^{*}$ nastavit nějaké dobré řešení
-
 # ### Heuristics application
 
-# In[5]:
+# In[7]:
 
 
 alphas = [{"r": 15, "m": 10},{"r": 5, "m": 5},{"r": 6, "m": 6},{"r": 5, "m": 5},{"r": 7, "m": 7}, {"r": 20, "m": 1},
@@ -87,7 +102,7 @@ print(prob_unlimited.evaluate(x_star))
 prob = dopt.VolumeDistribution(d, delta, alphas, prob_unlimited.evaluate(x_star))
 
 
-# In[6]:
+# In[8]:
 
 
 for i in range(100):
@@ -99,7 +114,7 @@ for i in range(100):
 
 # ## Random shooting test
 
-# In[7]:
+# In[9]:
 
 
 from heur_sg import ShootAndGo
@@ -111,9 +126,9 @@ for i in range(10):
 
 
 # ### Genetic optimization
-# when using the convex combination, the solution remains in the domain
+# Manual configuration of the problem and test of the GO heuristics with the normalization correction.
 
-# In[8]:
+# In[10]:
 
 
 import heur_aux
@@ -132,33 +147,33 @@ print(normCorr.correct(xx))
 ## og_proj = heur_aux.OGProjectionCorrection(prob, vectors)
 
 
-# In[9]:
+# In[11]:
 
 
 from heur_go import Crossover, UniformMultipoint, RandomCombination
 
 
-# In[10]:
+# In[12]:
 
 
 from heur_go import GeneticOptimization
 from heur_fsa import FastSimulatedAnnealing
 
 
-# In[11]:
+# In[13]:
 
 
 from heur_aux import CauchyMutation, Mutation, NormalizeCorrection, ExtensionCorrection, MirrorCorrection, Correction
 
 
-# In[12]:
+# In[14]:
 
 
 cauchy = CauchyMutation(r=1, correction=NormalizeCorrection(prob))
 cauchy.mutate(np.array([6.12, -4.38,  2.96]))
 
 
-# In[13]:
+# In[15]:
 
 
 heur = GeneticOptimization(prob, maxeval=10000, N=10, M=30, Tsel1=0.5, Tsel2=0.1, 
@@ -167,7 +182,7 @@ res = heur.search()
 res
 
 
-# In[14]:
+# In[16]:
 
 
 heur = GeneticOptimization(prob, maxeval=10000, N=10, M=30, Tsel1=0.5, Tsel2=0.1, 
@@ -176,13 +191,13 @@ res = heur.search()
 res
 
 
-# In[15]:
+# In[17]:
 
 
 sum(res['best_x'])
 
 
-# In[16]:
+# In[18]:
 
 
 heur = GeneticOptimization( prob_unlimited, 
@@ -196,7 +211,7 @@ res = heur.search()
 res
 
 
-# In[17]:
+# In[19]:
 
 
 heur = GeneticOptimization(prob_unlimited, maxeval=10000, N=10, M=30, Tsel1=0.5, Tsel2=0.1, 
@@ -205,17 +220,20 @@ res = heur.search()
 res
 
 
-# In[18]:
+# In[20]:
 
 
-import matplotlib.pyplot as plt
+
 
 plt.plot(res['best_x'])
 
 
 # ### Now, let us move to more complex setup of the problem
+# - Generate more $\boldsymbol{\alpha}$ parameters.
+# - Create an expert estimate of $f^{*}$.
+# - Analyze the problem and create an estimate of the $f^{*}$.
 
-# In[19]:
+# In[21]:
 
 
 np.random.seed(123545)
@@ -240,7 +258,7 @@ line, = ax1.plot([alpha['m'] for alpha in alphas], [alpha['r'] for alpha in alph
 plt.show()
 
 
-# In[20]:
+# In[22]:
 
 
 delta = 1
@@ -264,9 +282,11 @@ prob = dopt.VolumeDistribution(d, delta, alphas, prob_unlimited.evaluate(x_star)
 prob_pen = dopt.VolumeDistributionPenalization(d, delta, alphas, prob_unlimited.evaluate(x_star), 0)
 
 
-# Problem analysis
+# Our first estimate of $f^{*}$ is 10.12.
+# 
+# Now lets try to obtain other estimates by utilizing the genetic optimization.
 
-# In[22]:
+# In[23]:
 
 
 heur = GeneticOptimization( prob_unlimited, 
@@ -281,7 +301,7 @@ print(res['best_y'])
 plt.plot(np.cumsum(res['best_x']))
 
 
-# In[23]:
+# In[24]:
 
 
 heur = GeneticOptimization( prob_unlimited, 
@@ -296,7 +316,7 @@ print(res['best_y'])
 plt.plot(np.cumsum(res['best_x']))
 
 
-# In[24]:
+# In[25]:
 
 
 heur = FastSimulatedAnnealing( prob_unlimited,
@@ -310,9 +330,25 @@ print(res['best_y'])
 plt.plot(np.cumsum(res['best_x']))
 
 
-# ### utilization of problem with penalization
+# The result is very good in comparison with the first estimate. However, I hoped for smoother solution.
+# Simulated annealing gives also a good result.
+# 
+# Lets try the prepared problem with penalization.
 
-# In[81]:
+# In[26]:
+
+
+## Setup the good enough value of fstar
+prob.fstar = -50
+
+NUM_RUNS = 100
+maxeval = 1000
+
+
+# ### Utilization of penalization
+# In the following test genetic optimization with different setups of corrections and Cauchy diameter setting is utilized. There are also various values of penalization parameter tested. I want to see whether the result (`best_x`) is be admissible, i.e. $\sum_{k=1}^{d}x_{k}=1$.
+
+# In[27]:
 
 
 NUM_RUNS = 100
@@ -325,7 +361,7 @@ for correction in corrections:
     for Cr in [0.01, 0.1, 0.5, 1]:
         for p in [0.8, 0.1, 0.01, 0.005]:
             prob_pen_unlimited.penalization = p
-            heur_name = 'GO_DOP(p:{},Cr:{},corr{})'.format(p, Cr, correction['name'])
+            heur_name = 'GO_DOP(p:{},Cr:{},corr:{})'.format(p, Cr, correction['name'])
             for i in tqdm(range(NUM_RUNS), 'Testing {}'.format(heur_name)):
                 run = GeneticOptimization( prob_pen_unlimited, 
                                             maxeval=1000,
@@ -351,10 +387,10 @@ for correction in corrections:
                                            'best_x',
                                            'best_y',
                                            'neval'] )
-            resultsPen = pd.concat([results, res_df], axis=0)
+            resultsPen = pd.concat([resultsPen, res_df], axis=0)
 
 
-# In[83]:
+# In[28]:
 
 
 def avg_sum(x):
@@ -371,11 +407,11 @@ results_pivot = results_pivot.reset_index()
 results_pivot.sort_values(by='admissibility_rate')
 
 
-# In[98]:
+# In[29]:
 
 
 results_pivot = resultsPen.pivot_table(
-    index=['heur'],
+    index=['heur', 'penalization'],
     values=['neval'],
     aggfunc=(rel, mne, feo)
 )['neval']
@@ -383,29 +419,21 @@ results_pivot = results_pivot.reset_index()
 results_pivot.sort_values(by='rel')
 
 
-# ### Comparison
+# Notes:
+# ---
+# - The lower radius of the correction the higher chance for the result to be admissible.
+# - The lower penalization coeficient the lower admissibility rate.
+# - None of the setups have reached the value of -50 or lower. Therefore all have 0 reliability.
+# 
+# ## Conclusion:
+# The approach using penalization is probably not that good in this kind of problem.
 
-# In[93]:
+# ### Genetic optimization test on non-penalized problem
 
-
-## Setup the best found value 
-prob.fstar = -50
-
-NUM_RUNS = 100
-maxeval = 1000
-
-
-# In[30]:
-
-
-import pandas as pd
-from tqdm.notebook import tqdm
+# In[31]:
 
 
-# In[94]:
-
-
-results = pd.DataFrame()
+resultsGO = pd.DataFrame()
 runs = []
 for setup in [{'N': 50, 'M': 150, 'multipoint': 1, 'T1': 0.5, 'T2': 0.1, 'Cr': 1,},
               {'N': 50, 'M': 100, 'multipoint': 1, 'T1': 0.5, 'T2': 0.1, 'Cr': 1,},
@@ -437,24 +465,15 @@ for setup in [{'N': 50, 'M': 150, 'multipoint': 1, 'T1': 0.5, 'T2': 0.1, 'Cr': 1
         runs.append(run)
     
     res_df = pd.DataFrame(runs, columns=['heur', 'run', 'best_x', 'best_y', 'neval'])
-    results = pd.concat([results, res_df], axis=0)
+    resultsGO = pd.concat([resultsGO, res_df], axis=0)
 
 
-# In[90]:
+# ### Results of GO
+
+# In[32]:
 
 
-def rel(x):
-    return len([n for n in x if n < np.inf])/len(x)
-def mne(x):
-    return np.mean([n for n in x if n < np.inf])
-def feo(x):
-    return mne(x)/rel(x)
-
-
-# In[95]:
-
-
-results_pivot = results.pivot_table(
+results_pivot = resultsGO.pivot_table(
     index=['heur'],
     values=['neval'],
     aggfunc=(rel, mne, feo)
@@ -463,16 +482,17 @@ results_pivot = results_pivot.reset_index()
 results_pivot.sort_values(by='rel')
 
 
-# In[92]:
+# In[33]:
 
 
-results
+resultsGO.sort_values(by=['best_y'], inplace=True)
+resultsGO
 
 
-# In[96]:
+# In[35]:
 
 
-results = pd.DataFrame()
+resultsRS = pd.DataFrame()
 runs = []
 heur_name = 'RS_{}'.format(maxeval)
 for i in tqdm(range(NUM_RUNS), 'Testing {}'.format(heur_name)):
@@ -482,13 +502,13 @@ for i in tqdm(range(NUM_RUNS), 'Testing {}'.format(heur_name)):
     runs.append(run)
     
 res_df = pd.DataFrame(runs, columns=['heur', 'run', 'best_x', 'best_y', 'neval'])
-results = pd.concat([results, res_df], axis=0)
+resultsRS = pd.concat([resultsRS, res_df], axis=0)
 
 
-# In[97]:
+# In[36]:
 
 
-results_pivot = results.pivot_table(
+results_pivot = resultsRS.pivot_table(
     index=['heur'],
     values=['neval'],
     aggfunc=(rel, mne, feo)
@@ -500,11 +520,18 @@ results_pivot.sort_values(by='rel')
 # In[37]:
 
 
-results
+resultsRS.sort_values(by=['best_y'], inplace=True)
+resultsRS
 
 
-# In[ ]:
-
-
-
-
+# # Conclusion
+# In this work a specific problem with unknown $f^{*}$ was tested. At first the implementation of the problem was tested. Then, a more complex setup were created and the problem was analyzed.
+# For the sake of analysis we prepared an estimate of the `x_star`. However, this estimate of `x_star` and $f^{*}$ was surpassed by the genetic optimization at first run. Therefore, the $f^{*}$ of the problem was updated according to the new result. The following table summarizes the tested heuristics.
+# 
+# | heuristics | problem | result |
+# |:---:|:---:|:---|
+# |Genetic optimization| penalized | The result was pretty bad, [see](#Notes:) |
+# |Genetic optimization|non-penalized| The result is very good and the reliability hits over 90% ([see](#Results-of-GO)), however the solution is not as smooth as was expected.|
+# |Random Shooting|non-penalized| This heuristics never hit the $f^{*}$ |
+# 
+# Note: The resuts generated by PSO have the same behaviour as the ones from GO algorithm.
