@@ -15,7 +15,7 @@ class DifferentialEvolution(Heuristic):
         self.name = 'DE'
 
     def get_specs(self):
-        return self.get_name() + '_N={}_CR={}_F={}'.format(self.N, self.CR, self.F)
+        return '{}_N={}_CR={}_F={}'.format(self.get_name(), self.N, self.CR, self.F)
 
     def search(self):
         try:

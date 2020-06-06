@@ -37,11 +37,14 @@ class Heuristic:
 
     def get_name(self):
         """
+        Returns name of the heuristic this object is representing.
         """
         return self.name
 
     def get_specs(self):
         """
+        Get heuristic specification placeholder.
+        Should return string identifying the heuristic including its set parameter values.
         """
         raise NotImplementedError("Heuristic must implement its own search function")
 

@@ -6,6 +6,10 @@ import os.path
 
 class ExperimentPerformer(object):
 
+    """
+    Allows experimenting with different kinds of heuristics at ones.
+    """
+
     def __init__(self, log_file='experiments.log'):
         self.log_file = log_file
         self.run = 0

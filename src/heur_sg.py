@@ -28,7 +28,7 @@ class ShootAndGo(Heuristic):
             self.name = 'SG_RS'
 
     def get_specs(self):
-        return self.get_name() + '_hmax={}'.format(self.hmax)
+        return '{}_hmax={}'.format(self.get_name(), self.hmax)
 
     def steepest_descent(self, x):
         """

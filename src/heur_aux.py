@@ -27,6 +27,7 @@ class Correction:
 
 
 class MirrorCorrection(Correction):
+
     """
     Mutation correction via mirroring
     """
@@ -49,6 +50,7 @@ class MirrorCorrection(Correction):
 
 
 class ExtensionCorrection(Correction):
+
     """
     Mutation correction via periodic domain extension
     """

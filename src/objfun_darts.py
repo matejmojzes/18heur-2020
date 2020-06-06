@@ -20,8 +20,19 @@ def pol_to_car(alpha, distance):
 
 class Dartboard(ObjFun):
 
-    def __init__(self, sectors=None, sectors_angle=None, ring_params=None):
+    """
+    Object function representing any kind of dartboard that can be defined by concentric circles and radial sectors.
+    Default constructor values defines standard dartboard.
+    """
 
+    def __init__(self, sectors=None, sectors_angle=None, ring_params=None):
+        """
+        Initialization function
+        :param sectors: list of scores attributable to radial sectors. Length of the list defines the number of them.
+        :param sectors_angle: initial angular rotation of all sectors
+        :param ring_params: defines concentric circles that modify the sector score. Each circle is defined by its
+                            perimeter, sectors score multiplier and constant to add to the score. Expects list of lists.
+        """
         if sectors is not None:
             self.sectors = sectors
         else:
@@ -109,12 +120,20 @@ class Dartboard(ObjFun):
 
 
 class DartsAvgScore(ObjFun):
+
     """
-    Generic objective function super-class
+    Object encapsulating forwarded object function. It can serve as an object function too, but returns average score
+    of defined number of evaluations of encapsulated of. The forwarded point for evaluation serves as a mean value of
+    normal distribution. Effectively it just blurs encapsulated of.
     """
 
     def __init__(self, variance, iterations=None, dartboard=None):
-
+        """
+        Initialization function
+        :param variance: variance or covariance matrix for normal distribution defining throws accuracy
+        :param iterations: number of random throws from which the average score is counted
+        :param dartboard: encapsulated object function representing the dartboard itself
+        """
         if isinstance(variance, list):
             if isinstance(variance[0], list):
                 self.covariance = variance
@@ -144,24 +163,14 @@ class DartsAvgScore(ObjFun):
                              dtype=np.float)
 
     def generate_point(self):
-        """
-        Random point generator placeholder
-        :return: random point from the domain
-        """
         return self.dartboard.generate_point()
 
     def get_neighborhood(self, x, d):
-        """
-        Solution neighborhood generating function placeholder
-        :param x: point
-        :return: list of points in the neighborhood of the x
-        """
         return self.dartboard.get_neighborhood(x, d)
 
     def evaluate(self, x):
         """
-        Objective function evaluating function placeholder
-        :param x: point
+        :param x: 2D point
         :return: objective function value
         """
         if isinstance(x[0], np.ndarray):
@@ -189,6 +198,10 @@ class DartsAvgScore(ObjFun):
 
 
 class DartsPlotter(object):
+
+    """
+    Plots forwarded dartboard object function. Other of should not be forwarded.
+    """
 
     def __init__(self):
         self.epsilon = 0.000001

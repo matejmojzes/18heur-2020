@@ -4,6 +4,7 @@ import numpy as np
 
 
 class Crossover:
+
     """
     Baseline crossover  - randomly chooses "genes" from parents
     """
@@ -20,6 +21,7 @@ class Crossover:
 
 
 class UniformMultipoint(Crossover):
+
     """
     Uniform n-point crossover
     """
@@ -43,6 +45,7 @@ class UniformMultipoint(Crossover):
 
 
 class RandomCombination(Crossover):
+
     """
     Randomly combines parents
     """
@@ -74,10 +77,10 @@ class GeneticOptimization(Heuristic):
         self.mutation = mutation
         self.crossover = crossover
 
-        self.name = 'GO' + self.crossover.get_name() + mutation.get_name()
+        self.name = 'GO{}{}'.format(self.crossover.get_name(), mutation.get_name())
 
     def get_specs(self):
-        return self.get_name() + self.crossover.get_name() + '_N={}_M={}_T1={}_T2={}'.format(self.N, self.M, self.Tsel1, self.Tsel2)
+        return '{}_N={}_M={}_T1={}_T2={}'.format(self.get_name(), self.N, self.M, self.Tsel1, self.Tsel2)
 
     @staticmethod
     def sort_pop(pop_x, pop_f):

@@ -17,6 +17,9 @@ class ObjFun(object):
         self.name = name
 
     def get_name(self):
+        """
+        Returns the name of the object function the object is representing.
+        """
         return self.name
 
     def get_fstar(self):
