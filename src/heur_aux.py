@@ -57,6 +57,32 @@ class ExtensionCorrection(Correction):
         return x
 
 
+class NormalizeCorrection(Correction):
+    """
+    Mutation correction via normalization of the vector
+    """
+
+    def __init__(self, of):
+        Correction.__init__(self, of)
+
+    def correct(self, x):
+        x = abs(x)
+        return x/sum(x)
+
+
+class OGProjectionCorrection(Correction):
+    """
+    Mutation correction via normalization of the vector
+    """
+
+    def __init__(self, of, vectors):
+        Correction.__init__(self, of)
+        self.q, self.r = np.linalg.qr(vectors, 'complete')
+
+    def correct(self, x):
+        x = np.multiply(self.qr, np.multiply(self.qr, x))
+        return x
+
 class Mutation:
 
     """
@@ -65,6 +91,9 @@ class Mutation:
 
     def __init__(self, correction):
         self.correction = correction
+
+    def mutate(self, x):
+        return self.correction(x)
 
 
 class CauchyMutation(Mutation):
