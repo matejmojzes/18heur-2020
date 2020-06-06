@@ -30,6 +30,7 @@ class TSPGrid(ObjFun):
         self.dist = dist
         self.a = np.zeros(n-1, dtype=np.int)  # n-1 because the first city is pre-determined
         self.b = np.arange(n-2, -1, -1)
+        self.name = 'tsp'
 
     def generate_point(self):
         """

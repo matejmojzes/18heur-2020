@@ -25,6 +25,11 @@ class FastSimulatedAnnealing(Heuristic):
         self.alpha = alpha
         self.mutation = mutation
 
+        self.name = 'FSA{}'.format(self.mutation.get_name())
+
+    def get_specs(self):
+        return '{}_T0={}_n0={}_alpha={}'.format(self.get_name(), self.T0, self.n0, self.alpha)
+
     def search(self):
         """
         Core searching function

@@ -15,7 +15,8 @@ class AirShip(ObjFun):
         fstar = -100
         a = 0
         b = 799
-        super().__init__(fstar, a, b)
+        name = 'airship'
+        super().__init__(fstar, a, b, name)
 
     def generate_point(self):
         """

@@ -4,25 +4,31 @@ import numpy as np
 
 
 class Crossover:
+
     """
     Baseline crossover  - randomly chooses "genes" from parents
     """
 
     def __init__(self):
-        pass
+        self.name = 'mix'
 
     def crossover(self, x, y):
         z = np.array([x[i] if np.random.uniform() < 0.5 else y[i] for i in np.arange(x.size)], dtype=x.dtype)
         return z
 
+    def get_name(self):
+        return self.name
+
 
 class UniformMultipoint(Crossover):
+
     """
     Uniform n-point crossover
     """
 
     def __init__(self, n):
         self.n = n  # number of crossover points
+        self.name = 'uni'
 
     def crossover(self, x, y):
         co_n = self.n + 1
@@ -39,12 +45,13 @@ class UniformMultipoint(Crossover):
 
 
 class RandomCombination(Crossover):
+
     """
     Randomly combines parents
     """
 
     def __init__(self):
-        pass
+        self.name = 'rnd'
 
     def crossover(self, x, y):
 
@@ -69,6 +76,11 @@ class GeneticOptimization(Heuristic):
         self.Tsel2 = Tsel2  # second selection temperature
         self.mutation = mutation
         self.crossover = crossover
+
+        self.name = 'GO{}{}'.format(self.crossover.get_name(), mutation.get_name())
+
+    def get_specs(self):
+        return '{}_N={}_M={}_T1={}_T2={}'.format(self.get_name(), self.N, self.M, self.Tsel1, self.Tsel2)
 
     @staticmethod
     def sort_pop(pop_x, pop_f):

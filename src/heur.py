@@ -28,11 +28,25 @@ class Heuristic:
         :param maxeval: maximum allowed number of evaluations
         """
         self.of = of
+        self.name = 'Abstract'
         self.maxeval = maxeval
         self.best_y = np.inf
         self.best_x = None
         self.neval = 0
         self.log_data = []
+
+    def get_name(self):
+        """
+        Returns name of the heuristic this object is representing.
+        """
+        return self.name
+
+    def get_specs(self):
+        """
+        Get heuristic specification placeholder.
+        Should return string identifying the heuristic including its set parameter values.
+        """
+        raise NotImplementedError("Heuristic must implement its own search function")
 
     def evaluate(self, x):
         """
@@ -47,7 +61,7 @@ class Heuristic:
             self.best_x = x
         if y <= self.of.get_fstar():
             raise StopCriterion('Found solution with desired fstar value')
-        if self.neval == self.maxeval:
+        if self.neval >= self.maxeval:
             raise StopCriterion('Exhausted maximum allowed number of evaluations')
         return y
 
@@ -57,6 +71,12 @@ class Heuristic:
         :param data: dict with logging row
         """
         self.log_data.append(data)
+
+    def clear(self):
+        self.best_y = np.inf
+        self.best_x = None
+        self.neval = 0
+        self.log_data = []
 
     def report_end(self):
         """

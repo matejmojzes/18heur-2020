@@ -15,7 +15,8 @@ class SumSin(ObjFun):
         :param b: domain upper bound vector
         """
         self.n = np.size(a)  # dimension of the task
-        super().__init__(fstar=0, a=a, b=b)
+        name = 'sumsin'
+        super().__init__(fstar=0, a=a, b=b, name=name)
 
     def generate_point(self):
         """

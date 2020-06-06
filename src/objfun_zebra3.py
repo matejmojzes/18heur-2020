@@ -15,6 +15,7 @@ class Zebra3(ObjFun):
         self.n = d*3
         self.a = np.zeros(self.n, dtype=int)
         self.b = np.ones(self.n, dtype=int)
+        self.name='zebra'
 
     def generate_point(self):
         return np.random.randint(0, 1+1, self.n)

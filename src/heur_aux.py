@@ -17,18 +17,24 @@ class Correction:
 
     def __init__(self, of):
         self.of = of
+        self.name = 'cor'
+
+    def get_name(self):
+        return self.name
 
     def correct(self, x):
         return np.minimum(np.maximum(x, self.of.a), self.of.b)
 
 
 class MirrorCorrection(Correction):
+
     """
     Mutation correction via mirroring
     """
 
     def __init__(self, of):
         Correction.__init__(self, of)
+        self.name = 'mir'
 
     def correct(self, x):
         n = np.size(x)
@@ -44,12 +50,14 @@ class MirrorCorrection(Correction):
 
 
 class ExtensionCorrection(Correction):
+
     """
     Mutation correction via periodic domain extension
     """
 
     def __init__(self, of):
         Correction.__init__(self, of)
+        self.name = 'ext'
 
     def correct(self, x):
         d = self.of.b - self.of.a
@@ -65,6 +73,13 @@ class Mutation:
 
     def __init__(self, correction):
         self.correction = correction
+        self.name = 'abstract'
+
+    def get_name(self):
+        return self.name
+
+    def mutate(self, x):
+        raise NotImplementedError("Mutation must implement its own mutate function")
 
 
 class CauchyMutation(Mutation):
@@ -76,6 +91,7 @@ class CauchyMutation(Mutation):
     def __init__(self, r, correction):
         Mutation.__init__(self, correction)
         self.r = r
+        self.name = 'cau_{}_r={}'.format(correction.get_name(), self.r)
 
     def mutate(self, x):
         n = np.size(x)
