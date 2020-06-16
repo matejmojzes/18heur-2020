@@ -1,0 +1,10 @@
+# This file may be used to create an environment using:
+# $ conda create -p=env --file requirements.txt
+# platform: osx-64
+matplotlib=3.1.1
+numpy=1.18.1=py36h7241aed_0
+pandas=0.25.1
+python=3.6.10=h359304d_0
+seaborn=0.10.0=py_0
+tqdm=4.43.0=py_0
+pillow=7.1.2
